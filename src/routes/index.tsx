@@ -372,15 +372,9 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 05 — Contact
           </div>
-          <h2 className="mt-4 text-5xl font-bold md:text-7xl">
-            I&apos;d love
-            <br />
-            <span className="text-gradient-primary">to connect.</span>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+            I&apos;d love to <span className="text-gradient-primary">connect</span> — reach out below.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            Reach out below — I&apos;m always happy to talk about internships, research, or
-            interesting mechanical and mechatronics projects.
-          </p>
           <a
             href="mailto:chillyer@purdue.edu"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow"
