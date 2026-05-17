@@ -373,13 +373,13 @@ function Index() {
             / 05 — Contact
           </div>
           <h2 className="mt-4 text-5xl font-bold md:text-7xl">
-            Got something
+            I&apos;d love
             <br />
-            <span className="text-gradient-primary">worth building?</span>
+            <span className="text-gradient-primary">to connect.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            Open to internships, research collaborations and interesting mechanical or
-            mechatronics projects.
+            Reach out below — I&apos;m always happy to talk about internships, research, or
+            interesting mechanical and mechatronics projects.
           </p>
           <a
             href="mailto:chillyer@purdue.edu"
