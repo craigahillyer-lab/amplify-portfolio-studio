@@ -387,18 +387,6 @@ function Index() {
           >
             <Mail className="h-4 w-4" /> chillyer@purdue.edu
           </a>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-            <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Glen Rock, NJ</span>
-            <span>(551) 221-4541</span>
-            <a
-              href="https://linkedin.com/in/craig-hillyer"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
-            >
-              <Linkedin className="h-4 w-4" /> craig-hillyer
-            </a>
-          </div>
         </div>
       </section>
 
