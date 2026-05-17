@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Cpu, Wrench, Zap, Mail } from "lucide-react";
+import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin } from "lucide-react";
 import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
@@ -372,21 +372,27 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 05 — Contact
           </div>
-          <h2 className="mt-4 text-5xl font-bold md:text-7xl">
-            I&apos;d love
-            <br />
-            <span className="text-gradient-primary">to connect.</span>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+            I&apos;d love to <span className="text-gradient-primary">connect</span> — reach out below.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            Reach out below — I&apos;m always happy to talk about internships, research, or
-            interesting mechanical and mechatronics projects.
-          </p>
           <a
             href="mailto:chillyer@purdue.edu"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow"
           >
             <Mail className="h-4 w-4" /> chillyer@purdue.edu
           </a>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+            <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Glen Rock, NJ</span>
+            <span>(551) 221-4541</span>
+            <a
+              href="https://linkedin.com/in/craig-hillyer"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+            >
+              <Linkedin className="h-4 w-4" /> craig-hillyer
+            </a>
+          </div>
         </div>
       </section>
 
