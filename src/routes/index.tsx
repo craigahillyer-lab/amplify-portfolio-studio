@@ -167,13 +167,13 @@ function Index() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-                / 01 — Selected work
+                / 01 — Work
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">Recent builds</h2>
+              <h2 className="mt-4 text-4xl font-bold md:text-5xl">Projects</h2>
             </div>
             <p className="hidden max-w-sm text-sm text-muted-foreground md:block">
-              A cross-section of mechanical, electrical and firmware projects from research,
-              internships and personal builds.
+              Mechanical, electrical and firmware projects from research, internships and personal
+              builds.
             </p>
           </div>
 
@@ -200,6 +200,21 @@ function Index() {
                     </div>
                     <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+                    {p.links && (
+                      <div className="mt-3 flex flex-wrap gap-3">
+                        {p.links.map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
+                          >
+                            {l.label} <ArrowUpRight className="h-3 w-3" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                 </div>
