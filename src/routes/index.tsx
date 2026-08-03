@@ -260,11 +260,7 @@ function Index() {
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
                 / 02 — About
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-                Hardware-first.
-                <br />
-                Software-fluent.
-              </h2>
+              <h2 className="mt-4 text-4xl font-bold md:text-5xl">About me</h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 From CAD models and tolerance stacks, through PCB layout and DFM, to the
                 firmware that brings a product alive — I like working on every layer of a
