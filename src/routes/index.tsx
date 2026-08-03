@@ -114,17 +114,19 @@ function Index() {
           className="absolute inset-x-0 top-0 h-[600px]"
           style={{ background: "var(--gradient-glow)" }}
         />
+        <img
+          src={wireframe.url}
+          alt="Submersible robot wireframe"
+          className="pointer-events-none absolute right-0 bottom-0 w-full max-w-4xl opacity-[0.12] mix-blend-luminosity md:-right-24 md:w-3/4 lg:w-2/3"
+        />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3 font-mono-display text-xs uppercase tracking-[0.3em] text-muted-foreground">
             <span className="h-px w-8 bg-primary" />
             Portfolio · 2026
           </div>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-7xl lg:text-8xl">
-            Mechanical
-            <span className="text-gradient-primary"> engineering </span>
-            student building
-            <br />
-            robots, hardware, and systems.
+            Craig Hillyer
+            <span className="text-gradient-primary"> Portfolio</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             I&apos;m <span className="text-foreground">Craig Hillyer</span> — a Purdue first-year
