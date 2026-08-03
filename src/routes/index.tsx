@@ -12,16 +12,20 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     n: "01",
-    title: "Multimodal Submersible Frame",
-    tag: "MARS Research Lab · Purdue",
-    desc: "Redesigned the internal frame and modules of a multimodal submersible for improved strength and modularity, with machined components supporting integrated water flow and wire management.",
+    title: "Multimodal Underwater Robot",
+    tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
+    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
     img: p1,
+    links: [
+      { label: "Lab site", url: "https://www.purduemars.com/" },
+      { label: "Build video", url: "https://www.youtube.com/watch?v=cd5N3-Pw6c0" },
+    ],
   },
   {
     n: "02",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed and prototyped next-generation cutting machine tool head components for a high-volume product (~10,000 units), validated via 3D printing and low-cost machining.",
+    desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
     img: p2,
   },
   {
@@ -115,40 +119,37 @@ function Index() {
             Portfolio · 2026
           </div>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-7xl lg:text-8xl">
-            Designing,
-            <span className="text-gradient-primary"> machining </span>
-            and prototyping
+            Mechanical
+            <span className="text-gradient-primary"> engineering </span>
+            student building
             <br />
-            real mechanical things.
+            robots, hardware, and systems.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a mechanical
-            engineering student at Purdue University working across CAD, CNC, PCB design and
-            firmware on robotics, submersibles and production hardware.
+            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a Purdue first-year
+            engineer working across CAD, CNC, PCB design and firmware.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
             >
-              View selected work
+              View work
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
               href="#reel"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              Watch the reel
+              Watch reel
             </a>
           </div>
 
           {/* Specs strip */}
-          <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-4">
+          <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-2">
             {[
               ["3.80", "Purdue GPA · Dean's List"],
               ["2029", "Expected graduation"],
-              ["MARS", "Research lab"],
-              ["10k+", "Units designed for"],
             ].map(([k, v]) => (
               <div key={v}>
                 <div className="font-mono-display text-2xl font-medium text-foreground">{k}</div>
@@ -166,13 +167,13 @@ function Index() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-                / 01 — Selected work
+                / 01 — Work
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">Recent builds</h2>
+              <h2 className="mt-4 text-4xl font-bold md:text-5xl">Projects</h2>
             </div>
             <p className="hidden max-w-sm text-sm text-muted-foreground md:block">
-              A cross-section of mechanical, electrical and firmware projects from research,
-              internships and personal builds.
+              Mechanical, electrical and firmware projects from research, internships and personal
+              builds.
             </p>
           </div>
 
@@ -199,6 +200,21 @@ function Index() {
                     </div>
                     <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+                    {p.links && (
+                      <div className="mt-3 flex flex-wrap gap-3">
+                        {p.links.map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
+                          >
+                            {l.label} <ArrowUpRight className="h-3 w-3" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                 </div>
@@ -244,15 +260,10 @@ function Index() {
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
                 / 02 — About
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-                Hardware-first.
-                <br />
-                Software-fluent.
-              </h2>
+              <h2 className="mt-4 text-4xl font-bold md:text-5xl">About me</h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                From CAD models and tolerance stacks, through PCB layout and DFM, to the
-                firmware that brings a product alive — I like working on every layer of a
-                physical product. My best builds had all those layers designed in concert.
+                I work across CAD, PCB design, DFM and firmware — from model to machined part to
+                working prototype.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -295,7 +306,7 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 03 — Experience
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Where I&apos;ve worked</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Experience</h2>
 
           <div className="mt-14 space-y-4">
             {experience.map((e) => (
@@ -329,11 +340,11 @@ function Index() {
         <div className="absolute inset-0 grid-paper-strong grid-fade-mask opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-            / 04 — In motion
+            / 04 — Reel
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Build reel</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Reel</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Shop work, prototyping, and CNC runs. Replace these embeds with your own clips.
+            Shop work, prototyping, and CNC runs.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
