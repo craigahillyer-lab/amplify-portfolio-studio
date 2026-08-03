@@ -340,11 +340,11 @@ function Index() {
         <div className="absolute inset-0 grid-paper-strong grid-fade-mask opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-            / 04 — In motion
+            / 04 — Reel
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Build reel</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Reel</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Shop work, prototyping, and CNC runs. Replace these embeds with your own clips.
+            Shop work, prototyping, and CNC runs.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
