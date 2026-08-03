@@ -12,16 +12,20 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     n: "01",
-    title: "Multimodal Submersible Frame",
-    tag: "MARS Research Lab · Purdue",
-    desc: "Redesigned the internal frame and modules of a multimodal submersible for improved strength and modularity, with machined components supporting integrated water flow and wire management.",
+    title: "Multimodal Underwater Robot",
+    tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
+    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
     img: p1,
+    links: [
+      { label: "Lab site", url: "https://www.purduemars.com/" },
+      { label: "Build video", url: "https://www.youtube.com/watch?v=cd5N3-Pw6c0" },
+    ],
   },
   {
     n: "02",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed and prototyped next-generation cutting machine tool head components for a high-volume product (~10,000 units), validated via 3D printing and low-cost machining.",
+    desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
     img: p2,
   },
   {
