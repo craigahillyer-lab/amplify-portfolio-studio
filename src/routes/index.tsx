@@ -262,9 +262,8 @@ function Index() {
               </div>
               <h2 className="mt-4 text-4xl font-bold md:text-5xl">About me</h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                From CAD models and tolerance stacks, through PCB layout and DFM, to the
-                firmware that brings a product alive — I like working on every layer of a
-                physical product. My best builds had all those layers designed in concert.
+                I work across CAD, PCB design, DFM and firmware — from model to machined part to
+                working prototype.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
