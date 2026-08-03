@@ -95,7 +95,7 @@ function Index() {
             <a href="#work" className="transition-colors hover:text-foreground">Work</a>
             <a href="#about" className="transition-colors hover:text-foreground">About</a>
             <a href="#experience" className="transition-colors hover:text-foreground">Experience</a>
-            <a href="#reel" className="transition-colors hover:text-foreground">Reel</a>
+            <a href="#videos" className="transition-colors hover:text-foreground">Videos</a>
             <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
           </nav>
           <a
@@ -141,10 +141,10 @@ function Index() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="#reel"
+              href="#videos"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              Watch reel
+              Watch videos
             </a>
           </div>
 
