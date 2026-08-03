@@ -115,40 +115,38 @@ function Index() {
             Portfolio · 2026
           </div>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-7xl lg:text-8xl">
-            Designing,
-            <span className="text-gradient-primary"> machining </span>
-            and prototyping
+            Mechanical
+            <span className="text-gradient-primary"> engineering </span>
+            student building
             <br />
-            real mechanical things.
+            robots, hardware, and systems.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a mechanical
-            engineering student at Purdue University working across CAD, CNC, PCB design and
-            firmware on robotics, submersibles and production hardware.
+            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a Purdue first-year
+            engineer working across CAD, CNC, PCB design and firmware.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
             >
-              View selected work
+              View work
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
               href="#reel"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              Watch the reel
+              Watch reel
             </a>
           </div>
 
           {/* Specs strip */}
-          <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-4">
+          <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-3">
             {[
               ["3.80", "Purdue GPA · Dean's List"],
               ["2029", "Expected graduation"],
               ["MARS", "Research lab"],
-              ["10k+", "Units designed for"],
             ].map(([k, v]) => (
               <div key={v}>
                 <div className="font-mono-display text-2xl font-medium text-foreground">{k}</div>
