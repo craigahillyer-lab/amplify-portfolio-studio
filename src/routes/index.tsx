@@ -306,7 +306,7 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 03 — Experience
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Where I&apos;ve worked</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Experience</h2>
 
           <div className="mt-14 space-y-4">
             {experience.map((e) => (
