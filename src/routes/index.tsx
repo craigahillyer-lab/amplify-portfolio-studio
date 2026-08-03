@@ -338,43 +338,35 @@ function Index() {
         </div>
       </section>
 
-      {/* REEL */}
-      <section id="reel" className="relative py-24">
+      {/* VIDEOS */}
+      <section id="videos" className="relative py-24">
         <div className="absolute inset-0 grid-paper-strong grid-fade-mask opacity-70" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-            / 04 — Reel
+            / 04 — Videos
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Reel</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Videos</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Shop work, prototyping, and CNC runs.
+            Project build videos and demos.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {[
-              { id: "aqz7Mw-bUgQ", title: "CNC toolpath · 5-axis" },
-              { id: "LXb3EKWsInQ", title: "Robotics build · season recap" },
-            ].map((v) => (
-              <div
-                key={v.id}
-                className="overflow-hidden rounded-2xl border border-border bg-secondary/40 shadow-glow"
-              >
-                <div className="relative aspect-video">
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={`https://www.youtube.com/embed/${v.id}`}
-                    title={v.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-                <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                  <span>{v.title}</span>
-                  <span>HD · 1080p</span>
-                </div>
+          <div className="mt-10">
+            <div className="overflow-hidden rounded-2xl border border-border bg-secondary/40 shadow-glow">
+              <div className="relative aspect-video">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/cd5N3-Pw6c0"
+                  title="Multimodal underwater robot build"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
-            ))}
+              <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                <span>Multimodal underwater robot build</span>
+                <span>HD · 1080p</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
