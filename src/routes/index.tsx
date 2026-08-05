@@ -155,7 +155,7 @@ function Index() {
           <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-2">
             {[
               ["3.80", "Purdue GPA · Dean's List"],
-              ["2029", "Expected graduation"],
+              ["Spring 2029", "Expected graduation"],
             ].map(([k, v]) => (
               <div key={v}>
                 <div className="font-mono-display text-2xl font-medium text-foreground">{k}</div>
