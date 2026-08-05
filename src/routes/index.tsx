@@ -183,48 +183,61 @@ function Index() {
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {projects.map((p) => (
-              <article
-                key={p.n}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    loading="lazy"
-                    width={1280}
-                    height={960}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex items-start justify-between gap-4 p-6">
-                  <div>
-                    <div className="font-mono-display text-xs text-muted-foreground">
-                      {p.n} · {p.tag}
-                    </div>
-                    <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                    {p.links && (
-                      <div className="mt-3 flex flex-wrap gap-3">
-                        {p.links.map((l) => (
-                          <a
-                            key={l.url}
-                            href={l.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
-                          >
-                            {l.label} <ArrowUpRight className="h-3 w-3" />
-                          </a>
-                        ))}
+            {projects.map((p) => {
+              const isOpen = expanded === p.n;
+              return (
+                <article
+                  key={p.n}
+                  onClick={() => setExpanded(isOpen ? null : p.n)}
+                  className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow ${isOpen ? "md:col-span-2" : ""}`}
+                >
+                  <div className={`overflow-hidden ${isOpen ? "aspect-[21/9]" : "aspect-[4/3]"}`}>
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      loading="lazy"
+                      width={1280}
+                      height={960}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex items-start justify-between gap-4 p-6">
+                    <div>
+                      <div className="font-mono-display text-xs text-muted-foreground">
+                        {p.n} · {p.tag}
                       </div>
+                      <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
+                      {isOpen && (
+                        <>
+                          <p className="mt-3 max-w-3xl text-sm text-muted-foreground">{p.desc}</p>
+                          {p.links && (
+                            <div className="mt-4 flex flex-wrap gap-3">
+                              {p.links.map((l) => (
+                                <a
+                                  key={l.url}
+                                  href={l.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
+                                >
+                                  {l.label} <ArrowUpRight className="h-3 w-3" />
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                    {isOpen ? (
+                      <X className="h-5 w-5 shrink-0 text-muted-foreground transition-colors hover:text-foreground" />
+                    ) : (
+                      <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                     )}
                   </div>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
