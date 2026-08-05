@@ -92,7 +92,7 @@ function Index() {
             <span className="tracking-wider">HILLYER/ENG</span>
           </a>
           <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#work" className="transition-colors hover:text-foreground">Work</a>
+            <a href="#work" className="transition-colors hover:text-foreground">Projects</a>
             <a href="#about" className="transition-colors hover:text-foreground">About</a>
             <a href="#experience" className="transition-colors hover:text-foreground">Experience</a>
             <a href="#videos" className="transition-colors hover:text-foreground">Videos</a>
