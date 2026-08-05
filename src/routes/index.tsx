@@ -129,7 +129,6 @@ function Index() {
           </div>
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-7xl lg:text-8xl">
             Craig Hillyer
-            <span className="text-gradient-primary"> Portfolio</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             I&apos;m <span className="text-foreground">Craig Hillyer</span> — a sophomore in
