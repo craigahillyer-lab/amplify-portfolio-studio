@@ -83,6 +83,7 @@ const experience = [
 ];
 
 function Index() {
+  const [expanded, setExpanded] = useState<string | null>(null);
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
