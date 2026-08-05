@@ -129,8 +129,9 @@ function Index() {
             <span className="text-gradient-primary"> Portfolio</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a Purdue first-year
-            engineer working across CAD, CNC, PCB design and firmware.
+            I&apos;m <span className="text-foreground">Craig Hillyer</span> — a sophomore in
+            Mechanical Engineering at Purdue with hands-on skills in CAD, CNC, PCB design and
+            firmware.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
