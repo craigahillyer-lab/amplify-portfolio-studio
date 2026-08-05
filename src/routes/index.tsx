@@ -84,6 +84,7 @@ const experience = [
 
 function Index() {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const selectedProject = projects.find((p) => p.n === expanded);
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
