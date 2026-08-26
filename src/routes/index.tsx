@@ -44,6 +44,7 @@ const projects = [
       { label: "Lab site", url: "https://www.purduemars.com/" },
       { label: "Build video", url: "https://www.youtube.com/watch?v=cd5N3-Pw6c0" },
     ],
+    gallery: subGallery,
   },
   {
     n: "02",
