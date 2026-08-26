@@ -156,7 +156,7 @@ function Index() {
         <img
           src={wireframe.url}
           alt="Submersible robot wireframe"
-          className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[140%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-20 mix-blend-luminosity md:w-[120%]"
+          className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[140%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-35 mix-blend-luminosity md:w-[120%]"
         />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3 font-mono-display text-xs uppercase tracking-[0.3em] text-muted-foreground">
@@ -168,7 +168,7 @@ function Index() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             I&apos;m <span className="text-foreground">Craig Hillyer</span> — a sophomore in
-            Mechanical Engineering at Purdue with hands-on skills in CAD, CNC, PCB design and
+            Mechanical Engineering at Purdue University with hands-on skills in CAD, CNC, PCB design and
             firmware.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -209,7 +209,7 @@ function Index() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-                / 01 — Work
+                / 01 — Projects
               </div>
               <h2 className="mt-4 text-4xl font-bold md:text-5xl">Projects</h2>
             </div>
@@ -316,10 +316,10 @@ function Index() {
                   <div>
                     <div className="font-semibold">Purdue University</div>
                     <div className="text-sm text-muted-foreground">
-                      First-Year Engineering Program · West Lafayette, IN
+                      Mechanical Engineering · West Lafayette, IN
                     </div>
                     <div className="mt-1 font-mono-display text-xs text-muted-foreground">
-                      Intended Major: Mechanical Engineering · Expected 2029
+                      Mechanical Engineering · Expected Spring 2029
                     </div>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono-display text-xs text-primary">
                       Dean&apos;s List · 3.80 GPA
