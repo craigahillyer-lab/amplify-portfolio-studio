@@ -5,6 +5,7 @@ import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
+import p5 from "@/assets/project-5.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -32,13 +33,20 @@ const projects = [
   },
   {
     n: "03",
+    title: "SharpCut Vacuum Box",
+    tag: "R&D Intern · Colex Finishing Solutions",
+    desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
+    img: p5,
+  },
+  {
+    n: "04",
     title: "CAD Macro Pad",
     tag: "Personal Project · PCB + Firmware",
     desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
     img: p3,
   },
   {
-    n: "04",
+    n: "05",
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
@@ -52,21 +60,40 @@ const experience = [
     org: "MARS Research Lab — Purdue University",
     date: "Oct 2025 – Present",
     bullets: [
-      "Redesigned submersible internal frame for strength and modularity",
-      "Machined custom components for water flow and wire management",
-      "Authored testing protocols and documentation for a research paper",
-      "Exploring imitation learning for autonomous control integration",
+      "Redesigned submersible internal frame and modules for strength and modularity",
+      "Machined custom frame components for integrated water flow and wire management",
+      "Developed testing protocols and comprehensive documentation for a research paper",
+      "Exploring imitation learning to enhance autonomous control",
     ],
   },
   {
-    role: "R&D Intern",
-    org: "Colex Finishing Solutions — Elmwood Park, NJ",
+    role: "Research & Development Intern",
+    org: "Colex Finishing Solutions — Oakland, NJ",
     date: "Jun 2025 – Aug 2025",
     bullets: [
-      "Designed components for the next-gen SharpCut tool head (~10k units)",
-      "Modeled complex parts and assemblies alongside senior engineers",
-      "Designed a custom LED PCB integrated into the new machine",
-      "Operated CNC machines to assist production",
+      "Designed and prototyped tool and tool-interface components for the next-gen SharpCut tool head",
+      "Conducted product development research to evaluate concepts and prove manufacturing feasibility",
+      "Collaborated with senior engineers to model complex parts and full machine assemblies",
+      "Used 3D printing and low-cost machining to test and validate prototypes",
+      "Designed a custom LED circuit board integrated into the new machine",
+      "Ran CNC machines to assist in production",
+    ],
+  },
+  {
+    role: "Active Controls — Purdue Space Program",
+    org: "Purdue University",
+    date: "Aug 2025 – Present",
+    bullets: [
+      "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components",
+    ],
+  },
+  {
+    role: "Gate Guard",
+    org: "Glen Rock Municipal Pool — Glen Rock, NJ",
+    date: "Summer 2022 – 2024",
+    bullets: [
+      "Assisted with equipment maintenance and repair, including pool filtration system support",
+      "Scanned memberships and provided customer service to keep daily operations running smoothly",
     ],
   },
   {
@@ -75,9 +102,18 @@ const experience = [
     date: "2021 – 2025",
     bullets: [
       "Led mechanical design and manufacturing of competition robots",
-      "Created CNC toolpaths and guided members in CAD and prototyping",
-      "Managed a $10,000+ annual budget for the team",
-      "Ran a summer CAD camp for younger members",
+      "Created CNC toolpaths, oversaw fabrication, and guided members in CAD and prototyping",
+      "Managed a $10,000+ yearly operating budget for the team",
+      "Ran a summer CAD camp to teach younger members the basics of CAD",
+    ],
+  },
+  {
+    role: "Technical Theater Manager",
+    org: "Glen Rock High School",
+    date: "2021 – 2025",
+    bullets: [
+      "Designed, rigged and programmed lighting and sound systems for multiple productions",
+      "Managed production crews and technical equipment for high school and middle school shows",
     ],
   },
 ];
@@ -120,7 +156,7 @@ function Index() {
         <img
           src={wireframe.url}
           alt="Submersible robot wireframe"
-          className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[140%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-20 mix-blend-luminosity md:w-[120%]"
+          className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[140%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-35 mix-blend-luminosity md:w-[120%]"
         />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3 font-mono-display text-xs uppercase tracking-[0.3em] text-muted-foreground">
@@ -132,7 +168,7 @@ function Index() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             I&apos;m <span className="text-foreground">Craig Hillyer</span> — a sophomore in
-            Mechanical Engineering at Purdue with hands-on skills in CAD, CNC, PCB design and
+            Mechanical Engineering at Purdue University with hands-on skills in CAD, CNC, PCB design and
             firmware.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -173,7 +209,7 @@ function Index() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
-                / 01 — Work
+                / 01 — Projects
               </div>
               <h2 className="mt-4 text-4xl font-bold md:text-5xl">Projects</h2>
             </div>
@@ -280,10 +316,10 @@ function Index() {
                   <div>
                     <div className="font-semibold">Purdue University</div>
                     <div className="text-sm text-muted-foreground">
-                      First-Year Engineering Program · West Lafayette, IN
+                      Mechanical Engineering · West Lafayette, IN
                     </div>
                     <div className="mt-1 font-mono-display text-xs text-muted-foreground">
-                      Intended Major: Mechanical Engineering · Expected 2029
+                      Expected Graduation: Spring 2029
                     </div>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono-display text-xs text-primary">
                       Dean&apos;s List · 3.80 GPA
