@@ -163,7 +163,7 @@ function Index() {
             <span className="h-px w-8 bg-primary" />
             Portfolio · 2026
           </div>
-          <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-[0.95] md:text-7xl lg:text-8xl">
+          <h1 className="mt-6 max-w-5xl text-6xl font-normal leading-[0.95] md:text-7xl lg:text-8xl">
             Craig Hillyer
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
@@ -211,7 +211,7 @@ function Index() {
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
                 / 01 — Projects
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">Projects</h2>
+              <h2 className="mt-4 text-5xl font-normal md:text-6xl">Projects</h2>
             </div>
             <p className="hidden max-w-sm text-sm text-muted-foreground md:block">
               Mechanical, electrical and firmware projects from research, internships and personal
@@ -279,7 +279,7 @@ function Index() {
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                     {selectedProject.n} · {selectedProject.tag}
                   </div>
-                  <h3 className="mt-2 text-3xl font-bold md:text-4xl">{selectedProject.title}</h3>
+                  <h3 className="mt-2 text-4xl font-normal md:text-5xl">{selectedProject.title}</h3>
                   <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{selectedProject.desc}</p>
                   {selectedProject.links && (
                     <div className="mt-6 flex flex-wrap gap-3">
@@ -339,7 +339,7 @@ function Index() {
               <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
                 / 02 — About
               </div>
-              <h2 className="mt-4 text-4xl font-bold md:text-5xl">About me</h2>
+              <h2 className="mt-4 text-5xl font-normal md:text-6xl">About me</h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Hello, my name is Craig. I use CAD, CAM and a range of technologies to build
                 prototypes and products from concept to finished part.
@@ -385,7 +385,7 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 03 — Experience
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Experience</h2>
+          <h2 className="mt-4 text-5xl font-normal md:text-6xl">Experience</h2>
 
           <div className="mt-14 space-y-4">
             {experience.map((e) => (
@@ -421,7 +421,7 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 04 — Videos
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Videos</h2>
+          <h2 className="mt-4 text-5xl font-normal md:text-6xl">Videos</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Project build videos and demos.
           </p>
@@ -454,7 +454,7 @@ function Index() {
           <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
             / 05 — Contact
           </div>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+          <h2 className="mt-4 text-5xl font-normal md:text-6xl">
             I&apos;d love to <span className="text-gradient-primary">connect</span> — reach out below.
           </h2>
           <a
