@@ -7,6 +7,27 @@ import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
 import p5 from "@/assets/project-5.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
+import sub1 from "@/assets/sub-1.png.asset.json";
+import sub2 from "@/assets/sub-2.png.asset.json";
+import sub3 from "@/assets/sub-3.png.asset.json";
+import sub4 from "@/assets/sub-4.png.asset.json";
+import sub5 from "@/assets/sub-5.png.asset.json";
+import sub6 from "@/assets/sub-6.png.asset.json";
+import sub7 from "@/assets/sub-7.png.asset.json";
+import sub8 from "@/assets/sub-8.png.asset.json";
+import sub9 from "@/assets/sub-9.png.asset.json";
+
+const subGallery = [
+  { url: sub9.url, caption: "Assembled multimodal robot — wings deployed" },
+  { url: sub2.url, caption: "Full system layout: electronics, pitch and buoyancy modules" },
+  { url: sub1.url, caption: "MARS Lab team at pool testing" },
+  { url: sub7.url, caption: "Thruster and rudder system" },
+  { url: sub3.url, caption: "Thruster assembly with protective shroud" },
+  { url: sub5.url, caption: "Buoyancy control module with peristaltic pump and bladder" },
+  { url: sub6.url, caption: "Pitch control module — ball screw actuator and moving mass" },
+  { url: sub4.url, caption: "Glider pitch dynamics free-body diagram" },
+  { url: sub8.url, caption: "Foldable wing linkage kinematics" },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
