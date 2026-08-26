@@ -319,7 +319,7 @@ function Index() {
                       Mechanical Engineering · West Lafayette, IN
                     </div>
                     <div className="mt-1 font-mono-display text-xs text-muted-foreground">
-                      Mechanical Engineering · Expected Spring 2029
+                      Expected Graduation: Spring 2029
                     </div>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono-display text-xs text-primary">
                       Dean&apos;s List · 3.80 GPA
