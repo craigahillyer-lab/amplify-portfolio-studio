@@ -144,14 +144,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   .font-mono-display {

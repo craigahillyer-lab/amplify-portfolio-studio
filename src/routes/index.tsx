@@ -318,6 +318,28 @@ function Index() {
                       ))}
                     </div>
                   )}
+                  {selectedProject.gallery && (
+                    <div className="mt-10">
+                      <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                        Gallery
+                      </div>
+                      <div className="mt-4 grid gap-5 sm:grid-cols-2">
+                        {selectedProject.gallery.map((g) => (
+                          <figure key={g.url} className="overflow-hidden rounded-2xl border border-border bg-background/60">
+                            <img
+                              src={g.url}
+                              alt={g.caption}
+                              loading="lazy"
+                              className="h-56 w-full bg-white object-contain"
+                            />
+                            <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+                              {g.caption}
+                            </figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
