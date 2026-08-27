@@ -39,7 +39,7 @@ const projects = [
     title: "Multimodal Underwater Robot",
     tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
     desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
-    img: p1,
+    img: sub2.url,
     links: [
       { label: "Lab site", url: "https://www.purduemars.com/" },
       { label: "Build video", url: "https://www.youtube.com/watch?v=cd5N3-Pw6c0" },
