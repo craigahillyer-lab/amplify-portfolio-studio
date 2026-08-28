@@ -32,6 +32,72 @@ const subGallery = [
   { url: sub8.url, caption: "Foldable wing linkage kinematics" },
 ];
 
+function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
+  const [i, setI] = useState(0);
+  const current = images[i];
+  const go = (d: number) => setI((prev) => (prev + d + images.length) % images.length);
+
+  return (
+    <div className="mt-10">
+      <div className="flex items-center justify-between">
+        <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+          Gallery
+        </div>
+        <div className="font-mono-display text-xs text-muted-foreground">
+          {i + 1} / {images.length}
+        </div>
+      </div>
+
+      <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-background/60">
+        <img
+          src={current.url}
+          alt={current.caption}
+          loading="lazy"
+          className="h-[300px] w-full bg-white object-contain md:h-[460px]"
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={() => go(-1)}
+              aria-label="Previous image"
+              className="absolute top-1/2 left-3 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-colors hover:bg-background"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => go(1)}
+              aria-label="Next image"
+              className="absolute top-1/2 right-3 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-colors hover:bg-background"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </>
+        )}
+        <div className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+          {current.caption}
+        </div>
+      </div>
+
+      {images.length > 1 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {images.map((g, idx) => (
+            <button
+              key={g.url}
+              onClick={() => setI(idx)}
+              aria-label={`Show image ${idx + 1}`}
+              className={`h-14 w-20 overflow-hidden rounded-lg border transition-colors ${
+                idx === i ? "border-primary" : "border-border opacity-60 hover:opacity-100"
+              }`}
+            >
+              <img src={g.url} alt={g.caption} loading="lazy" className="h-full w-full bg-white object-contain" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
