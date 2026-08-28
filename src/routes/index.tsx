@@ -75,8 +75,10 @@ const projects = [
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
-    img: p4,
+    img: activeCover.url,
+    videoUrl: activeVideo.url,
   },
+
 ];
 
 const experience = [
