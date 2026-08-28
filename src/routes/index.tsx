@@ -98,6 +98,57 @@ function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
   );
 }
 
+function CardGallery({
+  images,
+  title,
+}: {
+  images: { url: string; caption: string }[];
+  title: string;
+}) {
+  const [i, setI] = useState(0);
+  const go = (e: React.MouseEvent, d: number) => {
+    e.stopPropagation();
+    setI((prev) => (prev + d + images.length) % images.length);
+  };
+
+  return (
+    <>
+      <img
+        src={images[i].url}
+        alt={`${title} — ${images[i].caption}`}
+        loading="lazy"
+        className="h-full w-full bg-white object-contain transition-transform duration-700"
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={(e) => go(e, -1)}
+            aria-label="Previous image"
+            className="absolute top-1/2 left-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-colors hover:bg-background"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            onClick={(e) => go(e, 1)}
+            aria-label="Next image"
+            className="absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 text-foreground backdrop-blur transition-colors hover:bg-background"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-background/70 px-2.5 py-1.5 backdrop-blur">
+            {images.map((g, idx) => (
+              <span
+                key={g.url}
+                className={`h-1.5 w-1.5 rounded-full ${idx === i ? "bg-primary" : "bg-muted-foreground/50"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </>
+  );
+}
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
