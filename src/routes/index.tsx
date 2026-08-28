@@ -418,7 +418,7 @@ function Index() {
                       ))}
                     </div>
                   )}
-                  {selectedProject.gallery && (
+                  {selectedProject.videoUrl && selectedProject.gallery && (
                     <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
                   )}
                 </div>
