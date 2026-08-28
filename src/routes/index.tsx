@@ -16,6 +16,9 @@ import sub6 from "@/assets/sub-6.png.asset.json";
 import sub7 from "@/assets/sub-7.png.asset.json";
 import sub8 from "@/assets/sub-8.png.asset.json";
 import sub9 from "@/assets/sub-9.png.asset.json";
+import activeCover from "@/assets/active-controls-cover.png.asset.json";
+import activeVideo from "@/assets/active-controls-video.mp4.asset.json";
+
 
 const subGallery = [
   { url: sub9.url, caption: "Assembled multimodal robot — wings deployed" },
@@ -72,8 +75,10 @@ const projects = [
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
-    img: p4,
+    img: activeCover.url,
+    videoUrl: activeVideo.url,
   },
+
 ];
 
 const experience = [
@@ -287,16 +292,27 @@ function Index() {
                 >
                   <X className="h-5 w-5" />
                 </button>
-                <div className="aspect-[16/9] overflow-hidden rounded-2xl">
-                  <img
-                    src={selectedProject.img}
-                    alt={selectedProject.title}
-                    loading="lazy"
-                    width={1280}
-                    height={720}
-                    className="h-full w-full object-cover"
-                  />
+                <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
+                  {selectedProject.videoUrl ? (
+                    <video
+                      src={selectedProject.videoUrl}
+                      controls
+                      autoPlay
+                      muted
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={selectedProject.img}
+                      alt={selectedProject.title}
+                      loading="lazy"
+                      width={1280}
+                      height={720}
+                      className="h-full w-full object-cover"
+                    />
+                  )}
                 </div>
+
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                     {selectedProject.n} · {selectedProject.tag}
