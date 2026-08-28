@@ -418,8 +418,11 @@ function Index() {
                       ))}
                     </div>
                   )}
-                  {selectedProject.videoUrl && selectedProject.gallery && (
-                    <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
+                  {"videoUrl" in selectedProject && "gallery" in selectedProject && (
+                    <Slideshow
+                      key={selectedProject.n}
+                      images={(selectedProject as { gallery: { url: string; caption: string }[] }).gallery}
+                    />
                   )}
                 </div>
               </div>
