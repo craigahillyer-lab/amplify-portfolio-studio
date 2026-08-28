@@ -16,6 +16,9 @@ import sub6 from "@/assets/sub-6.png.asset.json";
 import sub7 from "@/assets/sub-7.png.asset.json";
 import sub8 from "@/assets/sub-8.png.asset.json";
 import sub9 from "@/assets/sub-9.png.asset.json";
+import activeCover from "@/assets/active-controls-cover.png.asset.json";
+import activeVideo from "@/assets/active-controls-video.mp4.asset.json";
+
 
 const subGallery = [
   { url: sub9.url, caption: "Assembled multimodal robot — wings deployed" },
