@@ -78,7 +78,20 @@ const projects = [
     img: activeCover.url,
     videoUrl: activeVideo.url,
   },
-
+  {
+    n: "06",
+    title: "Cosmic Goose — FTC Competition Robot",
+    tag: "Mechanical Lead · High School FTC",
+    desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
+    img: p1,
+  },
+  {
+    n: "07",
+    title: "Bechtel Center Training",
+    tag: "Purdue · Manufacturing Training",
+    desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
+    img: p4,
+  },
 ];
 
 const experience = [
