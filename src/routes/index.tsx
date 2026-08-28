@@ -384,8 +384,9 @@ function Index() {
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {"gallery" in p ? (
+                  {p.gallery ? (
                     <CardGallery images={p.gallery} title={p.title} />
+
                   ) : (
                     <img
                       src={p.img}
