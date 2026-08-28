@@ -371,8 +371,8 @@ function Index() {
                 >
                   <X className="h-5 w-5" />
                 </button>
-                <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
-                  {selectedProject.videoUrl ? (
+                {selectedProject.videoUrl ? (
+                  <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <video
                       src={selectedProject.videoUrl}
                       controls
@@ -380,7 +380,9 @@ function Index() {
                       muted
                       className="h-full w-full object-contain"
                     />
-                  ) : (
+                  </div>
+                ) : selectedProject.gallery ? null : (
+                  <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <img
                       src={selectedProject.img}
                       alt={selectedProject.title}
@@ -389,8 +391,11 @@ function Index() {
                       height={720}
                       className="h-full w-full object-cover"
                     />
-                  )}
-                </div>
+                  </div>
+                )}
+                {!selectedProject.videoUrl && selectedProject.gallery && (
+                  <Slideshow key={`top-${selectedProject.n}`} images={selectedProject.gallery} />
+                )}
 
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
