@@ -665,9 +665,10 @@ function Index() {
             <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Glen Rock, NJ</span>
             <span>(551) 221-4541</span>
             <a
-              href="https://linkedin.com/in/craig-hillyer"
+              href="https://www.linkedin.com/in/craig-hillyer"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Open Craig Hillyer's LinkedIn profile"
               className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
             >
               <Linkedin className="h-4 w-4" /> craig-hillyer
