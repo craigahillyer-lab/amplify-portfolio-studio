@@ -327,7 +327,7 @@ function Index() {
         <img
           src={wireframe.url}
           alt="Submersible robot wireframe"
-          className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[140%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-35 mix-blend-luminosity md:w-[120%]"
+          className="pointer-events-none absolute top-1/2 left-[58%] h-auto w-[150%] max-w-7xl -translate-x-1/2 -translate-y-1/2 opacity-50 mix-blend-luminosity md:w-[130%]"
         />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3 font-mono-display text-xs uppercase tracking-[0.3em] text-muted-foreground">
