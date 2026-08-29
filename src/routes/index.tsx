@@ -665,9 +665,17 @@ function Index() {
             <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Glen Rock, NJ</span>
             <span>(551) 221-4541</span>
             <a
-              href="https://www.linkedin.com/in/craig-hillyer"
+              href="https://linkedin.com/in/craig-hillyer/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(event) => {
+                event.preventDefault();
+                window.open(
+                  "https://linkedin.com/in/craig-hillyer/",
+                  "_blank",
+                  "noopener,noreferrer",
+                );
+              }}
               aria-label="Open Craig Hillyer's LinkedIn profile"
               className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
             >
