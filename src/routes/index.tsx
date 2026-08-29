@@ -194,6 +194,7 @@ const projects = [
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
     img: activeCover.url,
     videoUrl: activeVideo.url,
+    links: [{ label: "PSP site", url: "https://purdueseds.space/active-controls/" }],
   },
   {
     n: "06",
@@ -201,6 +202,7 @@ const projects = [
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
     img: p1,
+    links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
     n: "07",
