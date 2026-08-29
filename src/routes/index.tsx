@@ -280,6 +280,18 @@ const experience = [
 function Index() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const selectedProject = projects.find((p) => p.n === expanded);
+
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [expanded]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
