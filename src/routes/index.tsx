@@ -500,15 +500,15 @@ function Index() {
               onClick={() => setExpanded(null)}
             >
               <div
-                className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-border bg-secondary/50 p-6 shadow-2xl md:p-10"
+                className="relative max-h-[90vh] w-full max-w-7xl overflow-y-auto rounded-3xl border border-border bg-secondary/50 px-5 pb-8 pt-12 shadow-2xl md:px-10 md:pb-12 md:pt-14"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={() => setExpanded(null)}
-                  className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/80 text-foreground transition-colors hover:bg-background"
+                  className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background/80 text-foreground transition-colors hover:bg-background"
                   aria-label="Close project details"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
                 {selectedProject.gallery ? (
                   <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
