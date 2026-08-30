@@ -5,6 +5,7 @@ import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 import headshot from "@/assets/headshot.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
+import subCover from "@/assets/submersible-labeled-cover.png.asset.json";
 import sub2 from "@/assets/sub-2.png.asset.json";
 import sub3 from "@/assets/sub-3.png.asset.json";
 import sub4 from "@/assets/sub-4.png.asset.json";
@@ -27,6 +28,7 @@ import gooseCam from "@/assets/goose-cam.gif.asset.json";
 
 
 const subGallery = [
+  { url: subCover.url, caption: "Full system layout: electronics, pitch and buoyancy modules" },
   { url: sub9.url, caption: "Assembled multimodal robot — wings deployed" },
   { url: sub2.url, caption: "Full system layout: electronics, pitch and buoyancy modules" },
   { url: sub1.url, caption: "MARS Lab team at pool testing" },
@@ -180,7 +182,7 @@ const projects = [
     title: "Multimodal Underwater Robot",
     tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
     desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
-    img: sub2.url,
+    img: subCover.url,
     links: [
       { label: "Lab site", url: "https://www.purduemars.com/" },
       { label: "Build video", url: "https://www.youtube.com/watch?v=cd5N3-Pw6c0" },
