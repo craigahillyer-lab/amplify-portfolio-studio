@@ -509,7 +509,9 @@ function Index() {
                 >
                   <X className="h-5 w-5" />
                 </button>
-                {selectedProject.videoUrl ? (
+                {selectedProject.gallery ? (
+                  <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
+                ) : selectedProject.videoUrl ? (
                   <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <video
                       src={selectedProject.videoUrl}
@@ -531,9 +533,6 @@ function Index() {
                     />
                   </div>
                 ) : null}
-                {!selectedProject.videoUrl && selectedProject.gallery && (
-                  <Slideshow key={`top-${selectedProject.n}`} images={selectedProject.gallery} />
-                )}
 
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
@@ -555,12 +554,6 @@ function Index() {
                         </a>
                       ))}
                     </div>
-                  )}
-                  {"videoUrl" in selectedProject && "gallery" in selectedProject && (
-                    <Slideshow
-                      key={selectedProject.n}
-                      images={(selectedProject as { gallery: { url: string; caption: string }[] }).gallery}
-                    />
                   )}
                 </div>
               </div>
