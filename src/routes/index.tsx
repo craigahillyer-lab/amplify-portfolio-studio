@@ -226,7 +226,8 @@ const projects = [
     title: "Cosmic Goose — FTC Competition Robot",
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
-    img: p1,
+    img: gooseCover.url,
+    gallery: gooseGallery,
     links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
