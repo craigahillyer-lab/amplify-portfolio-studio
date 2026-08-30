@@ -18,6 +18,9 @@ import sub8 from "@/assets/sub-8.png.asset.json";
 import sub9 from "@/assets/sub-9.png.asset.json";
 import activeCover from "@/assets/active-controls-cover.png.asset.json";
 import activeVideo from "@/assets/active-controls-video.mp4.asset.json";
+import macroPcb from "@/assets/macro-pcb.png.asset.json";
+import macroAssembled from "@/assets/macro-assembled.png.asset.json";
+
 
 
 const subGallery = [
@@ -30,6 +33,11 @@ const subGallery = [
   { url: sub6.url, caption: "Pitch control module — ball screw actuator and moving mass" },
   { url: sub4.url, caption: "Glider pitch dynamics free-body diagram" },
   { url: sub8.url, caption: "Foldable wing linkage kinematics" },
+];
+
+const macroGallery = [
+  { url: macroAssembled.url, caption: "Assembled macro pad with Raspberry Pi Pico and custom PCB" },
+  { url: macroPcb.url, caption: "KiCad PCB layout — switch matrix and Pico pinout" },
 ];
 
 function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
@@ -185,7 +193,8 @@ const projects = [
     title: "CAD Macro Pad",
     tag: "Personal Project · PCB + Firmware",
     desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
-    img: p3,
+    img: macroAssembled.url,
+    gallery: macroGallery,
   },
   {
     n: "05",
