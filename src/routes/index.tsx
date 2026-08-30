@@ -192,12 +192,14 @@ const projects = [
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
+    compact: true,
   },
   {
     n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
+    compact: true,
   },
   {
     n: "04",
