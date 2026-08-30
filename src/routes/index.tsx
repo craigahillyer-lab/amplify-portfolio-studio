@@ -189,25 +189,24 @@ const projects = [
   },
   {
     n: "02",
-    title: "SharpCut Tool Head",
-    tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
-    compact: true,
-  },
-  {
-    n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
     compact: true,
   },
   {
+    n: "03",
+    title: "SharpCut Tool Head",
+    tag: "R&D Intern · Colex Finishing Solutions",
+    desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
+    compact: true,
+  },
+  {
     n: "04",
-    title: "CAD Macro Pad",
-    tag: "Personal Project · PCB + Firmware",
-    desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
-    img: macroAssembled.url,
-    gallery: macroGallery,
+    title: "Bechtel Center Training",
+    tag: "Purdue · Manufacturing Training",
+    desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
+    img: p4,
   },
   {
     n: "05",
@@ -229,10 +228,11 @@ const projects = [
   },
   {
     n: "07",
-    title: "Bechtel Center Training",
-    tag: "Purdue · Manufacturing Training",
-    desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
-    img: p4,
+    title: "CAD Macro Pad",
+    tag: "Personal Project · PCB + Firmware",
+    desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
+    img: macroAssembled.url,
+    gallery: macroGallery,
   },
 ];
 
