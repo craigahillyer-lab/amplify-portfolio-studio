@@ -20,6 +20,12 @@ import activeCover from "@/assets/active-controls-cover.png.asset.json";
 import activeVideo from "@/assets/active-controls-video.mp4.asset.json";
 import macroPcb from "@/assets/macro-pcb.png.asset.json";
 import macroAssembled from "@/assets/macro-assembled.png.asset.json";
+import gooseCover from "@/assets/goose-cover.png.asset.json";
+import gooseSide from "@/assets/goose-side.png.asset.json";
+import gooseLift from "@/assets/goose-lift.png.asset.json";
+import gooseArm from "@/assets/goose-arm.png.asset.json";
+import gooseIntake from "@/assets/goose-intake.png.asset.json";
+import gooseCam from "@/assets/goose-cam.gif.asset.json";
 
 
 
