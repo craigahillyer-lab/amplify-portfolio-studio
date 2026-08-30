@@ -421,21 +421,22 @@ function Index() {
                 onClick={() => setExpanded(p.n)}
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {p.gallery ? (
-                    <CardGallery images={p.gallery} title={p.title} />
-
-                  ) : (
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      width={1280}
-                      height={960}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  )}
-                </div>
+                {(p.gallery || p.img) && (
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    {p.gallery ? (
+                      <CardGallery images={p.gallery} title={p.title} />
+                    ) : (
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        loading="lazy"
+                        width={1280}
+                        height={960}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    )}
+                  </div>
+                )}
                 <div className="flex items-start justify-between gap-4 p-6">
                   <div>
                     <div className="font-mono-display text-xs text-muted-foreground">
