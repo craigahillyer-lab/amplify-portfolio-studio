@@ -712,9 +712,8 @@ function Index() {
       </section>
 
       <footer className="border-t border-border py-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-6 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
           <span>© 2026 Craig Hillyer</span>
-          <span>Built & hosted on AWS Amplify</span>
         </div>
       </footer>
     </div>
