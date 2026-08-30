@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
-import p5 from "@/assets/project-5.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
 import sub2 from "@/assets/sub-2.png.asset.json";
@@ -195,14 +191,12 @@ const projects = [
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
-    img: p2,
   },
   {
     n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
-    img: p5,
   },
   {
     n: "04",
@@ -423,21 +417,22 @@ function Index() {
                 onClick={() => setExpanded(p.n)}
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {p.gallery ? (
-                    <CardGallery images={p.gallery} title={p.title} />
-
-                  ) : (
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      width={1280}
-                      height={960}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  )}
-                </div>
+                {(p.gallery || p.img) && (
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    {p.gallery ? (
+                      <CardGallery images={p.gallery} title={p.title} />
+                    ) : (
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        loading="lazy"
+                        width={1280}
+                        height={960}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    )}
+                  </div>
+                )}
                 <div className="flex items-start justify-between gap-4 p-6">
                   <div>
                     <div className="font-mono-display text-xs text-muted-foreground">
@@ -477,7 +472,7 @@ function Index() {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                ) : selectedProject.gallery ? null : (
+                ) : selectedProject.img ? (
                   <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <img
                       src={selectedProject.img}
@@ -488,7 +483,7 @@ function Index() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                )}
+                ) : null}
                 {!selectedProject.videoUrl && selectedProject.gallery && (
                   <Slideshow key={`top-${selectedProject.n}`} images={selectedProject.gallery} />
                 )}
