@@ -476,7 +476,7 @@ function Index() {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                ) : selectedProject.gallery ? null : (
+                ) : selectedProject.img ? (
                   <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <img
                       src={selectedProject.img}
@@ -487,7 +487,7 @@ function Index() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                )}
+                ) : null}
                 {!selectedProject.videoUrl && selectedProject.gallery && (
                   <Slideshow key={`top-${selectedProject.n}`} images={selectedProject.gallery} />
                 )}
