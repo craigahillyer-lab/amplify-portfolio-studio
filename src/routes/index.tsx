@@ -355,14 +355,14 @@ function Index() {
             <span className="h-px w-8 bg-primary" />
             Portfolio · 2026
           </div>
-          <div className="mt-6 flex items-start justify-between gap-6">
+          <div className="mt-6 flex items-center gap-4 md:gap-6">
             <h1 className="max-w-5xl text-6xl font-normal leading-[0.95] md:text-7xl lg:text-8xl">
               Craig Hillyer
             </h1>
             <img
               src={headshot.url}
               alt="Craig Hillyer"
-              className="hidden h-28 w-24 rounded-2xl border border-border object-cover shadow-lg md:block lg:h-36 lg:w-28"
+              className="hidden h-20 w-16 rounded-2xl border border-border object-cover shadow-lg md:block lg:h-28 lg:w-22"
             />
           </div>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
