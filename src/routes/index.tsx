@@ -388,6 +388,14 @@ function Index() {
             >
               Watch videos
             </a>
+            <a
+              href={resumePdf.url}
+              download="Craig_Hillyer_Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            >
+              <FileText className="h-4 w-4" />
+              Download resume
+            </a>
           </div>
 
           {/* Specs strip */}
