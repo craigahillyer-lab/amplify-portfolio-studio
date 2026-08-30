@@ -46,6 +46,16 @@ const macroGallery = [
   { url: macroPcb.url, caption: "KiCad PCB layout — switch matrix and Pico pinout" },
 ];
 
+const gooseGallery = [
+  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms" },
+  { url: gooseSide.url, caption: "Side profile — team 8902 chassis layout" },
+  { url: gooseLift.url, caption: "Vertical lift assembly with linear slides and control hub mount" },
+  { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
+  { url: gooseIntake.url, caption: "Intake mechanism with motor-driven linkage" },
+  { url: gooseCam.url, caption: "CAM toolpaths for machined side plates" },
+];
+
+
 function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
   const [i, setI] = useState(0);
   const current = images[i];
