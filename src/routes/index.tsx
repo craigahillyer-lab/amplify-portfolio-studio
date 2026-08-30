@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
+import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
 import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 import headshot from "@/assets/headshot.png.asset.json";
@@ -386,6 +387,14 @@ function Index() {
               className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
               Watch videos
+            </a>
+            <a
+              href={resumePdf.url}
+              download="Craig_Hillyer_Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            >
+              <FileText className="h-4 w-4" />
+              Download resume
             </a>
           </div>
 
