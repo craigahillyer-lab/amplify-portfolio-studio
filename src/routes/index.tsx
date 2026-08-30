@@ -28,6 +28,7 @@ import gooseCam from "@/assets/goose-cam.gif.asset.json";
 
 
 const subGallery = [
+  { url: subCover.url, caption: "Full system layout: electronics, pitch and buoyancy modules" },
   { url: sub9.url, caption: "Assembled multimodal robot — wings deployed" },
   { url: sub2.url, caption: "Full system layout: electronics, pitch and buoyancy modules" },
   { url: sub1.url, caption: "MARS Lab team at pool testing" },
