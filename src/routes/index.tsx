@@ -591,7 +591,7 @@ function Index() {
                       Expected Graduation: Spring 2029
                     </div>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono-display text-xs text-primary">
-                      Dean&apos;s List · 3.80 GPA
+                      Dean&apos;s List · 3.77 GPA
                     </div>
                   </div>
                   <div className="border-t border-border pt-6">
