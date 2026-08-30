@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
+import headshot from "@/assets/headshot.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
 import sub2 from "@/assets/sub-2.png.asset.json";
 import sub3 from "@/assets/sub-3.png.asset.json";
@@ -354,9 +355,16 @@ function Index() {
             <span className="h-px w-8 bg-primary" />
             Portfolio · 2026
           </div>
-          <h1 className="mt-6 max-w-5xl text-6xl font-normal leading-[0.95] md:text-7xl lg:text-8xl">
-            Craig Hillyer
-          </h1>
+          <div className="mt-6 flex items-start justify-between gap-6">
+            <h1 className="max-w-5xl text-6xl font-normal leading-[0.95] md:text-7xl lg:text-8xl">
+              Craig Hillyer
+            </h1>
+            <img
+              src={headshot.url}
+              alt="Craig Hillyer"
+              className="hidden h-28 w-24 rounded-2xl border border-border object-cover shadow-lg md:block lg:h-36 lg:w-28"
+            />
+          </div>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             I&apos;m <span className="text-foreground">Craig Hillyer</span> — a sophomore in
             Mechanical Engineering at Purdue University with hands-on skills in CAD, CNC, PCB design and
