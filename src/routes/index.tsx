@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
+import headshot from "@/assets/headshot.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
 import sub2 from "@/assets/sub-2.png.asset.json";
 import sub3 from "@/assets/sub-3.png.asset.json";
