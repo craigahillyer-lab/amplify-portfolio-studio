@@ -74,9 +74,9 @@ function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
 
       <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-background/60">
         <img
+          key={current.url}
           src={current.url}
           alt={current.caption}
-          loading="lazy"
           className="h-[300px] w-full bg-white object-contain md:h-[460px]"
         />
         {images.length > 1 && (
