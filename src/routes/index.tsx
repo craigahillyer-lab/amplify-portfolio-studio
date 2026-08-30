@@ -20,6 +20,12 @@ import activeCover from "@/assets/active-controls-cover.png.asset.json";
 import activeVideo from "@/assets/active-controls-video.mp4.asset.json";
 import macroPcb from "@/assets/macro-pcb.png.asset.json";
 import macroAssembled from "@/assets/macro-assembled.png.asset.json";
+import gooseCover from "@/assets/goose-cover.png.asset.json";
+import gooseSide from "@/assets/goose-side.png.asset.json";
+import gooseLift from "@/assets/goose-lift.png.asset.json";
+import gooseArm from "@/assets/goose-arm.png.asset.json";
+import gooseIntake from "@/assets/goose-intake.png.asset.json";
+import gooseCam from "@/assets/goose-cam.gif.asset.json";
 
 
 
@@ -39,6 +45,16 @@ const macroGallery = [
   { url: macroAssembled.url, caption: "Assembled macro pad with Raspberry Pi Pico and custom PCB" },
   { url: macroPcb.url, caption: "KiCad PCB layout — switch matrix and Pico pinout" },
 ];
+
+const gooseGallery = [
+  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms" },
+  { url: gooseSide.url, caption: "Side profile — team 8902 chassis layout" },
+  { url: gooseLift.url, caption: "Vertical lift assembly with linear slides and control hub mount" },
+  { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
+  { url: gooseIntake.url, caption: "Intake mechanism with motor-driven linkage" },
+  { url: gooseCam.url, caption: "CAM toolpaths for machined side plates" },
+];
+
 
 function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
   const [i, setI] = useState(0);
@@ -210,7 +226,8 @@ const projects = [
     title: "Cosmic Goose — FTC Competition Robot",
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
-    img: p1,
+    img: gooseCover.url,
+    gallery: gooseGallery,
     links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
