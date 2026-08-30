@@ -362,7 +362,7 @@ function Index() {
             <img
               src={headshot.url}
               alt="Craig Hillyer"
-              className="hidden h-28 w-22 rounded-2xl border border-border object-cover shadow-lg md:block lg:h-36 lg:w-28"
+              className="hidden h-28 w-24 rounded-2xl border border-border object-cover shadow-lg md:block lg:h-36 lg:w-28"
             />
           </div>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
