@@ -192,12 +192,14 @@ const projects = [
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
+    compact: true,
   },
   {
     n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
+    compact: true,
   },
   {
     n: "04",
@@ -419,39 +421,76 @@ function Index() {
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {projects.map((p) => (
-              <article
-                key={p.n}
-                onClick={() => setExpanded(p.n)}
-                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
-              >
-                {(p.gallery || p.img) && (
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    {p.gallery ? (
-                      <CardGallery images={p.gallery} title={p.title} />
-                    ) : (
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        loading="lazy"
-                        width={1280}
-                        height={960}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+            {(() => {
+              const items: React.ReactNode[] = [];
+              for (let i = 0; i < projects.length; i++) {
+                const p = projects[i];
+                const card = (
+                  <article
+                    key={p.n}
+                    onClick={() => setExpanded(p.n)}
+                    className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow ${p.compact ? "flex flex-1 flex-col justify-center" : ""}`}
+                  >
+                    {(p.gallery || p.img) && (
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        {p.gallery ? (
+                          <CardGallery images={p.gallery} title={p.title} />
+                        ) : (
+                          <img
+                            src={p.img}
+                            alt={p.title}
+                            loading="lazy"
+                            width={1280}
+                            height={960}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
-                <div className="flex items-start justify-between gap-4 p-6">
-                  <div>
-                    <div className="font-mono-display text-xs text-muted-foreground">
-                      {p.n} · {p.tag}
+                    <div className="flex items-start justify-between gap-4 p-6">
+                      <div>
+                        <div className="font-mono-display text-xs text-muted-foreground">
+                          {p.n} · {p.tag}
+                        </div>
+                        <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
+                      </div>
+                      <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                     </div>
-                    <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
-                  </div>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
-                </div>
-              </article>
-            ))}
+                  </article>
+                );
+                if (p.compact && i + 1 < projects.length && projects[i + 1].compact) {
+                  items.push(
+                    <div key="colex-group" className="flex flex-col gap-6">
+                      {card}
+                      {(() => {
+                        const next = projects[i + 1];
+                        return (
+                          <article
+                            key={next.n}
+                            onClick={() => setExpanded(next.n)}
+                            className="group relative flex flex-1 cursor-pointer flex-col justify-center overflow-hidden rounded-2xl border border-border bg-secondary/30 transition-all hover:border-primary/50 hover:shadow-glow"
+                          >
+                            <div className="flex items-start justify-between gap-4 p-6">
+                              <div>
+                                <div className="font-mono-display text-xs text-muted-foreground">
+                                  {next.n} · {next.tag}
+                                </div>
+                                <h3 className="mt-2 text-xl font-semibold">{next.title}</h3>
+                              </div>
+                              <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                            </div>
+                          </article>
+                        );
+                      })()}
+                    </div>
+                  );
+                  i++;
+                } else {
+                  items.push(card);
+                }
+              }
+              return items;
+            })()}
           </div>
 
           {selectedProject && (
