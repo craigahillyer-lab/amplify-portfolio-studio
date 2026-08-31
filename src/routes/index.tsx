@@ -257,7 +257,7 @@ type Project = {
   desc: string;
   compact?: boolean;
   img?: string;
-  gallery?: { url: string; caption: string; type?: "image" | "video" }[];
+  gallery?: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
   videoUrl?: string;
   links?: { label: string; url: string }[];
 };
