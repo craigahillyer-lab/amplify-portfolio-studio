@@ -575,24 +575,6 @@ function Index() {
                   </div>
                 ) : null}
 
-                {selectedProject.gallery && selectedProject.videoUrl && (
-                  <div className="mt-10">
-                    <div className="flex items-center justify-between">
-                      <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                        Build video
-                      </div>
-                    </div>
-                    <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-black">
-                      <video
-                        src={selectedProject.videoUrl}
-                        controls
-                        muted
-                        className="h-auto w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                )}
-
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                     {selectedProject.n} · {selectedProject.tag}
