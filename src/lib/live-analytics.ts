@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+import { restFetch } from "@/lib/rest";
 
 export interface PageViewRow {
   path: string;
