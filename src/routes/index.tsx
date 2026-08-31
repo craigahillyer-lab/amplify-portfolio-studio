@@ -155,7 +155,7 @@ function CardGallery({
   images,
   title,
 }: {
-  images: { url: string; caption: string }[];
+  images: { url: string; caption: string; type?: "image" | "video" }[];
   title: string;
 }) {
   const [i, setI] = useState(0);
@@ -163,15 +163,25 @@ function CardGallery({
     e.stopPropagation();
     setI((prev) => (prev + d + images.length) % images.length);
   };
+  const current = images[i];
 
   return (
     <>
-      <img
-        src={images[i].url}
-        alt={`${title} — ${images[i].caption}`}
-        loading="lazy"
-        className="h-full w-full bg-white object-contain transition-transform duration-700"
-      />
+      {current.type === "video" ? (
+        <video
+          src={current.url}
+          controls
+          muted
+          className="h-full w-full bg-black object-contain transition-transform duration-700"
+        />
+      ) : (
+        <img
+          src={current.url}
+          alt={`${title} — ${current.caption}`}
+          loading="lazy"
+          className="h-full w-full bg-white object-contain transition-transform duration-700"
+        />
+      )}
       {images.length > 1 && (
         <>
           <button
