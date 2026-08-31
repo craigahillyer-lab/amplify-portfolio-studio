@@ -63,10 +63,15 @@ const bechtelGallery = [
   { url: bechtelVise.url, caption: "Workholding setup on the Haas VMC — vise and Pitbull clamp fixturing" },
   { url: bechtelLathe.url, caption: "Haas ST-15 CNC lathe running a turning program" },
   { url: bechtelCam.url, caption: "Fusion 360 CAM setup — lathe turning toolpath simulation" },
+  { url: bechtelVideo.url, caption: "Bechtel training build video", type: "video" as const },
 ];
 
 
-function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
+function Slideshow({
+  images,
+}: {
+  images: { url: string; caption: string; type?: "image" | "video" }[];
+}) {
   const [i, setI] = useState(0);
   const current = images[i];
   const go = (d: number) => setI((prev) => (prev + d + images.length) % images.length);
@@ -83,12 +88,22 @@ function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
       </div>
 
       <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-background/60">
-        <img
-          key={current.url}
-          src={current.url}
-          alt={current.caption}
-          className="h-[300px] w-full bg-white object-contain md:h-[460px]"
-        />
+        {current.type === "video" ? (
+          <video
+            key={current.url}
+            src={current.url}
+            controls
+            muted
+            className="h-[300px] w-full bg-black object-contain md:h-[460px]"
+          />
+        ) : (
+          <img
+            key={current.url}
+            src={current.url}
+            alt={current.caption}
+            className="h-[300px] w-full bg-white object-contain md:h-[460px]"
+          />
+        )}
         {images.length > 1 && (
           <>
             <button
@@ -119,11 +134,15 @@ function Slideshow({ images }: { images: { url: string; caption: string }[] }) {
               key={g.url}
               onClick={() => setI(idx)}
               aria-label={`Show image ${idx + 1}`}
-              className={`h-14 w-20 overflow-hidden rounded-lg border transition-colors ${
+              className={`relative h-14 w-20 overflow-hidden rounded-lg border transition-colors ${
                 idx === i ? "border-primary" : "border-border opacity-60 hover:opacity-100"
               }`}
             >
-              <img src={g.url} alt={g.caption} loading="lazy" className="h-full w-full bg-white object-contain" />
+              {g.type === "video" ? (
+                <video src={g.url} muted className="h-full w-full bg-black object-cover" />
+              ) : (
+                <img src={g.url} alt={g.caption} loading="lazy" className="h-full w-full bg-white object-contain" />
+              )}
             </button>
           ))}
         </div>
@@ -221,7 +240,6 @@ const projects = [
     desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
     img: bechtelPart.url,
     gallery: bechtelGallery,
-    videoUrl: bechtelVideo.url,
   },
   {
     n: "05",
@@ -556,24 +574,6 @@ function Index() {
                     />
                   </div>
                 ) : null}
-
-                {selectedProject.gallery && selectedProject.videoUrl && (
-                  <div className="mt-10">
-                    <div className="flex items-center justify-between">
-                      <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                        Build video
-                      </div>
-                    </div>
-                    <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-black">
-                      <video
-                        src={selectedProject.videoUrl}
-                        controls
-                        muted
-                        className="h-auto w-full object-contain"
-                      />
-                    </div>
-                  </div>
-                )}
 
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
