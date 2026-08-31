@@ -9,12 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StatsRouteImport } from './routes/stats'
+import { Route as Cvh9f42xMetricsRouteImport } from './routes/cvh-9f42x-metrics'
 import { Route as IndexRouteImport } from './routes/index'
 
-const StatsRoute = StatsRouteImport.update({
-  id: '/stats',
-  path: '/stats',
+const Cvh9f42xMetricsRoute = Cvh9f42xMetricsRouteImport.update({
+  id: '/cvh-9f42x-metrics',
+  path: '/cvh-9f42x-metrics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +25,37 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/stats': typeof StatsRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/stats': typeof StatsRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/stats': typeof StatsRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/stats'
+  fullPaths: '/' | '/cvh-9f42x-metrics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/stats'
-  id: '__root__' | '/' | '/stats'
+  to: '/' | '/cvh-9f42x-metrics'
+  id: '__root__' | '/' | '/cvh-9f42x-metrics'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  StatsRoute: typeof StatsRoute
+  Cvh9f42xMetricsRoute: typeof Cvh9f42xMetricsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/stats': {
-      id: '/stats'
-      path: '/stats'
-      fullPath: '/stats'
-      preLoaderRoute: typeof StatsRouteImport
+    '/cvh-9f42x-metrics': {
+      id: '/cvh-9f42x-metrics'
+      path: '/cvh-9f42x-metrics'
+      fullPath: '/cvh-9f42x-metrics'
+      preLoaderRoute: typeof Cvh9f42xMetricsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,7 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  StatsRoute: StatsRoute,
+  Cvh9f42xMetricsRoute: Cvh9f42xMetricsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

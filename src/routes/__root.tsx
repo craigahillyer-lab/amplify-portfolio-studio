@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { usePageviewTracking } from "@/lib/track";
 
 function NotFoundComponent() {
   return (
@@ -115,6 +116,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  usePageviewTracking();
 
   return (
     <QueryClientProvider client={queryClient}>
