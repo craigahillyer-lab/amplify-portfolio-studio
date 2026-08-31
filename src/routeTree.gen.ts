@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StatsRouteImport } from './routes/stats'
+import { Route as Cvh9f42xMetricsRouteImport } from './routes/cvh-9f42x-metrics'
 import { Route as IndexRouteImport } from './routes/index'
 
 const StatsRoute = StatsRouteImport.update({
   id: '/stats',
   path: '/stats',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Cvh9f42xMetricsRoute = Cvh9f42xMetricsRouteImport.update({
+  id: '/cvh-9f42x-metrics',
+  path: '/cvh-9f42x-metrics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cvh-9f42x-metrics': typeof Cvh9f42xMetricsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/stats'
+  fullPaths: '/' | '/cvh-9f42x-metrics' | '/stats'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/stats'
-  id: '__root__' | '/' | '/stats'
+  to: '/' | '/cvh-9f42x-metrics' | '/stats'
+  id: '__root__' | '/' | '/cvh-9f42x-metrics' | '/stats'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Cvh9f42xMetricsRoute: typeof Cvh9f42xMetricsRoute
   StatsRoute: typeof StatsRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/stats'
       fullPath: '/stats'
       preLoaderRoute: typeof StatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cvh-9f42x-metrics': {
+      id: '/cvh-9f42x-metrics'
+      path: '/cvh-9f42x-metrics'
+      fullPath: '/cvh-9f42x-metrics'
+      preLoaderRoute: typeof Cvh9f42xMetricsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Cvh9f42xMetricsRoute: Cvh9f42xMetricsRoute,
   StatsRoute: StatsRoute,
 }
 export const routeTree = rootRouteImport
