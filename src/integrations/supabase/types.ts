@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      page_views: {
+        Row: {
+          created_at: string
+          device: string | null
+          id: string
+          path: string
+          referrer: string | null
+          visitor_id: string
+        }
+        Insert: {
+          created_at?: string
+          device?: string | null
+          id?: string
+          path: string
+          referrer?: string | null
+          visitor_id: string
+        }
+        Update: {
+          created_at?: string
+          device?: string | null
+          id?: string
+          path?: string
+          referrer?: string | null
+          visitor_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
