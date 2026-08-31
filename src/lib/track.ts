@@ -41,6 +41,7 @@ export function usePageviewTracking() {
     if (typeof window === "undefined") return;
     if (pathname.startsWith(PRIVATE_STATS_PATH)) return;
 
+    console.log("track: recording", pathname);
     void supabase.from("page_views").insert({
       path: pathname,
       referrer: getReferrer(),
