@@ -104,10 +104,10 @@ function StatsPage() {
         </section>
 
         <section className="mt-8 grid gap-6 md:grid-cols-2">
-          <BreakdownCard title="Top pages" rows={data.pages.map((p) => ({ label: p.path, value: p.views })} />
-          <BreakdownCard title="Traffic sources" rows={data.sources.map((s) => ({ label: s.source, value: s.visitors })} />
-          <BreakdownCard title="Devices" rows={data.devices.map((d) => ({ label: d.device, value: d.visitors })} />
-          <BreakdownCard title="Countries" rows={data.countries.map((c) => ({ label: c.country, value: c.visitors })} />
+          <BreakdownCard title="Top pages" rows={data.pages.map((p) => ({ label: p.path, value: p.views }))} />
+          <BreakdownCard title="Traffic sources" rows={data.sources.map((s) => ({ label: s.source, value: s.visitors }))} />
+          <BreakdownCard title="Devices" rows={data.devices.map((d) => ({ label: d.device, value: d.visitors }))} />
+          <BreakdownCard title="Countries" rows={data.countries.map((c) => ({ label: c.country, value: c.visitors }))} />
         </section>
 
         <p className="mt-10 text-center text-xs text-muted-foreground">
