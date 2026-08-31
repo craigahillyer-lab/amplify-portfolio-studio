@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
-import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 import headshot from "@/assets/headshot.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
