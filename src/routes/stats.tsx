@@ -79,17 +79,21 @@ function StatsPage() {
             <Calendar className="h-4 w-4 text-primary" />
             <h2 className="font-display text-lg font-medium tracking-tight">Daily traffic</h2>
           </div>
-          <div className="flex h-64 items-end gap-1 md:gap-2">
+          <div className="flex h-56 items-end gap-1 md:gap-2">
             {data.daily.map((day) => {
-              const height = day.visitors > 0 ? `${(day.visitors / maxVisitors) * 100}%` : "4%";
+              const height = day.visitors > 0
+                ? `${Math.max(8, (day.visitors / maxVisitors) * 100)}%`
+                : "3%";
               return (
-                <div key={day.date} className="group flex flex-1 flex-col items-center gap-2">
+                <div key={day.date} className="group relative flex flex-1 flex-col items-center gap-2">
                   <div
                     className="w-full rounded-t-md bg-primary/80 transition-all group-hover:bg-primary"
                     style={{ height }}
-                    title={`${formatDate(day.date)}: ${day.visitors} visitors, ${day.pageviews} pageviews`}
                   />
-                  <span className="hidden rotate-0 text-[10px] text-muted-foreground md:block">
+                  <div className="pointer-events-none absolute -top-10 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs text-card-foreground shadow-sm group-hover:block">
+                    {formatDate(day.date)}: {day.visitors} visitors · {day.pageviews} views
+                  </div>
+                  <span className="hidden text-[10px] text-muted-foreground md:block">
                     {new Date(day.date).getDate()}
                   </span>
                 </div>
