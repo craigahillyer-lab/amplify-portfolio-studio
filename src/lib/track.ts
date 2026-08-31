@@ -43,11 +43,14 @@ export function usePageviewTracking() {
     if (pathname.startsWith(PRIVATE_STATS_PATH)) return;
 
     console.log("track: recording", pathname);
-    void supabase.from("page_views").insert({
-      path: pathname,
-      referrer: getReferrer(),
-      device: getDevice(),
-      visitor_id: getVisitorId(),
-    });
+    void supabase
+      .from("page_views")
+      .insert({
+        path: pathname,
+        referrer: getReferrer(),
+        device: getDevice(),
+        visitor_id: getVisitorId(),
+      })
+      .then((r) => console.log("track result", JSON.stringify(r)));
   }, [pathname]);
 }
