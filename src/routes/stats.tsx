@@ -79,15 +79,17 @@ function StatsPage() {
             <Calendar className="h-4 w-4 text-primary" />
             <h2 className="font-display text-lg font-medium tracking-tight">Daily traffic</h2>
           </div>
-          <div className="flex h-56 items-end gap-1 md:gap-2">
+          <div className="flex h-40 items-end gap-1 md:gap-2">
             {data.daily.map((day) => {
               const height = day.visitors > 0
-                ? `${Math.max(8, (day.visitors / maxVisitors) * 100)}%`
-                : "3%";
+                ? `${Math.max(16, (day.visitors / maxVisitors) * 100)}%`
+                : "4%";
               return (
                 <div key={day.date} className="group relative flex flex-1 flex-col items-center gap-2">
                   <div
-                    className="w-full rounded-t-md bg-primary/80 transition-all group-hover:bg-primary"
+                    className={`w-full rounded-t-md transition-all ${
+                      day.visitors > 0 ? "bg-primary/80 group-hover:bg-primary" : "bg-border/60"
+                    }`}
                     style={{ height }}
                   />
                   <div className="pointer-events-none absolute -top-10 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs text-card-foreground shadow-sm group-hover:block">
