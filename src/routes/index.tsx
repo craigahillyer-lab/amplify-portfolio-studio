@@ -121,7 +121,7 @@ function Slideshow({
             key={current.url}
             src={current.url}
             alt={current.caption}
-            className="h-[300px] w-full bg-white object-contain md:h-[460px]"
+            className={`h-[300px] w-full bg-white md:h-[460px] ${current.fit === "cover" ? "object-cover" : "object-contain"}`}
           />
         )}
         {images.length > 1 && (
