@@ -66,6 +66,12 @@ const bechtelGallery = [
   { url: bechtelVideo.url, caption: "Bechtel training build video", type: "video" as const },
 ];
 
+const activeGallery = [
+  { url: activeCover.url, caption: "CAD screenshot — component held in a machine vise with toolpath vectors" },
+  { url: activeVideo.url, caption: "Active Controls CAM footage", type: "video" as const },
+];
+
+
 
 function Slideshow({
   images,
