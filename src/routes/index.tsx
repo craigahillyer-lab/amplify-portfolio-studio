@@ -278,20 +278,27 @@ const projects: Project[] = [
   },
   {
     n: "02",
+    title: "SharpCut Auto Tool Changer",
+    tag: "R&D Intern · Colex Finishing Solutions",
+    desc: "Developed an automated tool-changing system for the SharpCut flatbed cutter, reducing manual changeover time and increasing machine throughput.",
+    compact: true,
+  },
+  {
+    n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
     compact: true,
   },
   {
-    n: "03",
+    n: "04",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
     compact: true,
   },
   {
-    n: "04",
+    n: "05",
     title: "Bechtel Center Training",
     tag: "Purdue · Manufacturing Training",
     desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
@@ -299,7 +306,7 @@ const projects: Project[] = [
     gallery: bechtelGallery,
   },
   {
-    n: "05",
+    n: "06",
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
@@ -308,7 +315,7 @@ const projects: Project[] = [
   },
 
   {
-    n: "06",
+    n: "07",
     title: "Cosmic Goose — FTC Competition Robot",
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
@@ -317,7 +324,7 @@ const projects: Project[] = [
     links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
-    n: "07",
+    n: "08",
     title: "CAD Macro Pad",
     tag: "Personal Project · PCB + Firmware",
     desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
