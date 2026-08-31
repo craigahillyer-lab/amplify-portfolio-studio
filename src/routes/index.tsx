@@ -66,6 +66,12 @@ const bechtelGallery = [
   { url: bechtelVideo.url, caption: "Bechtel training build video", type: "video" as const },
 ];
 
+const activeGallery = [
+  { url: activeCover.url, caption: "CAD screenshot — component held in a machine vise with toolpath vectors" },
+  { url: activeVideo.url, caption: "Active Controls CAM footage", type: "video" as const },
+];
+
+
 
 function Slideshow({
   images,
@@ -244,7 +250,20 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const projects = [
+type Project = {
+  n: string;
+  title: string;
+  tag: string;
+  desc: string;
+  compact?: boolean;
+  img?: string;
+  gallery?: { url: string; caption: string; type?: "image" | "video" }[];
+  videoUrl?: string;
+  links?: { label: string; url: string }[];
+};
+
+const projects: Project[] = [
+
   {
     n: "01",
     title: "Multimodal Underwater Robot",
@@ -284,10 +303,10 @@ const projects = [
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
-    img: activeCover.url,
-    videoUrl: activeVideo.url,
+    gallery: activeGallery,
     links: [{ label: "PSP site", url: "https://purdueseds.space/active-controls/" }],
   },
+
   {
     n: "06",
     title: "Cosmic Goose — FTC Competition Robot",
@@ -590,16 +609,6 @@ function Index() {
                 </button>
                 {selectedProject.gallery ? (
                   <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
-                ) : selectedProject.videoUrl ? (
-                  <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
-                    <video
-                      src={selectedProject.videoUrl}
-                      controls
-                      autoPlay
-                      muted
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
                 ) : selectedProject.img ? (
                   <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <img
@@ -612,6 +621,7 @@ function Index() {
                     />
                   </div>
                 ) : null}
+
 
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
