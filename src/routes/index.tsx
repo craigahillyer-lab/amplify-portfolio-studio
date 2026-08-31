@@ -663,12 +663,12 @@ function Index() {
       <section id="about" className="relative py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 md:grid-cols-5">
-            <div className="md:col-span-2">
-              <div className="flex h-full flex-col rounded-2xl border border-border bg-secondary/30 p-8">
+            <div className="self-end md:col-span-2">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-8">
                 <div className="font-mono-display text-xs uppercase tracking-[0.3em] text-primary">
                   Education
                 </div>
-                <div className="mt-4 flex-1 space-y-6">
+                <div className="mt-4 space-y-6">
                   <div>
                     <div className="font-semibold">Purdue University</div>
                     <div className="text-sm text-muted-foreground">
