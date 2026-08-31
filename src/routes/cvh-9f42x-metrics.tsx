@@ -71,7 +71,7 @@ function MetricsPage() {
         )}
 
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <StatCard icon={<Users className="h-5 w-5 text-primary" />} label="Visitors" value={data ? data.visitors.toLocaleString() : "—"} />
+          <StatCard icon={<Users className="h-5 w-5 text-primary" />} label="Unique visitors" value={data ? data.visitors.toLocaleString() : "—"} />
           <StatCard icon={<Eye className="h-5 w-5 text-primary" />} label="Pageviews" value={data ? data.pageviews.toLocaleString() : "—"} />
           <StatCard icon={<MousePointerClick className="h-5 w-5 text-primary" />} label="Pages / visit" value={data ? data.pageviewsPerVisit.toFixed(2) : "—"} />
           <StatCard icon={<Sun className="h-5 w-5 text-primary" />} label="Visitors today" value={data ? data.visitorsToday.toLocaleString() : "—"} />
