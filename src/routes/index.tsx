@@ -50,7 +50,7 @@ const macroGallery = [
 ];
 
 const gooseGallery = [
-  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms" },
+  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms", fit: "cover" as const },
   { url: gooseSide.url, caption: "Side profile — team 8902 chassis layout" },
   { url: gooseLift.url, caption: "Vertical lift assembly with linear slides and control hub mount" },
   { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
