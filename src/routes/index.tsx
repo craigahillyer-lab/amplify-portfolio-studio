@@ -290,10 +290,10 @@ const projects = [
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
-    img: activeCover.url,
-    videoUrl: activeVideo.url,
+    gallery: activeGallery,
     links: [{ label: "PSP site", url: "https://purdueseds.space/active-controls/" }],
   },
+
   {
     n: "06",
     title: "Cosmic Goose — FTC Competition Robot",
