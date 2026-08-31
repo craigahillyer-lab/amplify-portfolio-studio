@@ -50,7 +50,7 @@ const macroGallery = [
 ];
 
 const gooseGallery = [
-  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms" },
+  { url: gooseCover.url, caption: "Full robot CAD render — drivetrain, lift and scoring mechanisms", fit: "cover" as const },
   { url: gooseSide.url, caption: "Side profile — team 8902 chassis layout" },
   { url: gooseLift.url, caption: "Vertical lift assembly with linear slides and control hub mount" },
   { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
@@ -76,7 +76,7 @@ const activeGallery = [
 function Slideshow({
   images,
 }: {
-  images: { url: string; caption: string; type?: "image" | "video" }[];
+  images: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
 }) {
   const [i, setI] = useState(0);
   const current = images[i];
@@ -121,7 +121,7 @@ function Slideshow({
             key={current.url}
             src={current.url}
             alt={current.caption}
-            className="h-[300px] w-full bg-white object-contain md:h-[460px]"
+            className={`h-[300px] w-full bg-white md:h-[460px] ${current.fit === "cover" ? "object-cover" : "object-contain"}`}
           />
         )}
         {images.length > 1 && (
@@ -161,7 +161,7 @@ function Slideshow({
               {g.type === "video" ? (
                 <video src={g.url} muted className="h-full w-full bg-black object-cover" />
               ) : (
-                <img src={g.url} alt={g.caption} loading="lazy" className="h-full w-full bg-white object-contain" />
+                <img src={g.url} alt={g.caption} loading="lazy" className={`h-full w-full bg-white ${g.fit === "cover" ? "object-cover" : "object-contain"}`} />
               )}
             </button>
           ))}
@@ -175,7 +175,7 @@ function CardGallery({
   images,
   title,
 }: {
-  images: { url: string; caption: string; type?: "image" | "video" }[];
+  images: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
   title: string;
 }) {
   const [i, setI] = useState(0);
@@ -213,7 +213,7 @@ function CardGallery({
           src={current.url}
           alt={`${title} — ${current.caption}`}
           loading="lazy"
-          className="h-full w-full bg-white object-contain transition-transform duration-700"
+          className={`h-full w-full bg-white transition-transform duration-700 ${current.fit === "cover" ? "object-cover" : "object-contain"}`}
         />
       )}
       {images.length > 1 && (
@@ -257,7 +257,7 @@ type Project = {
   desc: string;
   compact?: boolean;
   img?: string;
-  gallery?: { url: string; caption: string; type?: "image" | "video" }[];
+  gallery?: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
   videoUrl?: string;
   links?: { label: string; url: string }[];
 };
