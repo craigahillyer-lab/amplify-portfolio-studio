@@ -54,15 +54,14 @@ export async function fetchLiveStats(): Promise<LiveStats> {
   const now = new Date();
   const start = new Date(now.getTime() - DAYS * 24 * 60 * 60 * 1000);
 
-  const { data, error } = await supabase
-    .from("page_views")
-    .select("path, referrer, device, visitor_id, created_at")
-    .gte("created_at", start.toISOString())
-    .order("created_at", { ascending: true })
-    .limit(50000);
+  const query =
+    `page_views?select=path,referrer,device,visitor_id,created_at` +
+    `&created_at=gte.${encodeURIComponent(start.toISOString())}` +
+    `&order=created_at.asc&limit=50000`;
 
-  if (error) throw new Error(error.message);
-  const rows = (data ?? []) as PageViewRow[];
+  const res = await restFetch(query);
+  if (!res.ok) throw new Error(`Request failed (${res.status})`);
+  const rows = ((await res.json()) ?? []) as PageViewRow[];
 
   const dailyMap = new Map<string, { visitors: Set<string>; pageviews: number }>();
   for (let i = 0; i < DAYS; i++) {
