@@ -105,9 +105,9 @@ export async function fetchLiveStats(): Promise<LiveStats> {
 
 /** UTC-stable short date, so SSR and client render identically. */
 export function formatDayUTC(dateKey: string): string {
-  const [y, m, d] = dateKey.split("-").map(Number);
+  const [, m, d] = dateKey.split("-").map(Number);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  return `${months[(m ?? 1) - 1]} ${d}${y ? "" : ""}`;
+  return `${months[(m ?? 1) - 1]} ${d}`;
 }
 
 export function formatTimeUTC(iso: string): string {
