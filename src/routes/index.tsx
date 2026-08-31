@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
@@ -74,7 +74,19 @@ function Slideshow({
 }) {
   const [i, setI] = useState(0);
   const current = images[i];
+  const videoRef = useRef<HTMLVideoElement>(null);
   const go = (d: number) => setI((prev) => (prev + d + images.length) % images.length);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (current.type === "video") {
+      v.play();
+    } else {
+      v.pause();
+      v.currentTime = 0;
+    }
+  }, [current]);
 
   return (
     <div className="mt-10">
@@ -90,11 +102,13 @@ function Slideshow({
       <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-background/60">
         {current.type === "video" ? (
           <video
+            ref={videoRef}
             key={current.url}
             src={current.url}
             controls
             muted
-            className="h-[300px] w-full bg-black object-contain md:h-[460px]"
+            playsInline
+            className="h-[300px] w-full bg-black object-cover md:h-[460px]"
           />
         ) : (
           <img
@@ -159,20 +173,34 @@ function CardGallery({
   title: string;
 }) {
   const [i, setI] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const go = (e: React.MouseEvent, d: number) => {
     e.stopPropagation();
     setI((prev) => (prev + d + images.length) % images.length);
   };
   const current = images[i];
 
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (current.type === "video") {
+      v.play();
+    } else {
+      v.pause();
+      v.currentTime = 0;
+    }
+  }, [current]);
+
   return (
     <>
       {current.type === "video" ? (
         <video
+          ref={videoRef}
           src={current.url}
           controls
           muted
-          className="h-full w-full bg-black object-contain transition-transform duration-700"
+          playsInline
+          className="h-full w-full bg-black object-cover transition-transform duration-700"
         />
       ) : (
         <img
