@@ -76,7 +76,7 @@ const activeGallery = [
 function Slideshow({
   images,
 }: {
-  images: { url: string; caption: string; type?: "image" | "video" }[];
+  images: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
 }) {
   const [i, setI] = useState(0);
   const current = images[i];
