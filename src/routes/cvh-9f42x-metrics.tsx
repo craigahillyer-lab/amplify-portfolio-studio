@@ -104,8 +104,10 @@ function MetricsPage() {
                     </div>
                     <div className="mt-3 shrink-0 text-center">
                       <div className="text-xs font-medium text-foreground">{day.pageviews}</div>
+                      <div className="font-mono text-[10px] text-primary">{day.visitors} uniq</div>
                       <div className="text-[10px] text-muted-foreground">{formatDayUTC(day.date)}</div>
                     </div>
+
                   </div>
                 );
               })}
