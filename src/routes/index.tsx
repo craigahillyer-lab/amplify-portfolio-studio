@@ -609,16 +609,6 @@ function Index() {
                 </button>
                 {selectedProject.gallery ? (
                   <Slideshow key={selectedProject.n} images={selectedProject.gallery} />
-                ) : selectedProject.videoUrl ? (
-                  <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
-                    <video
-                      src={selectedProject.videoUrl}
-                      controls
-                      autoPlay
-                      muted
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
                 ) : selectedProject.img ? (
                   <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-black">
                     <img
@@ -631,6 +621,7 @@ function Index() {
                     />
                   </div>
                 ) : null}
+
 
                 <div className="mt-6">
                   <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
