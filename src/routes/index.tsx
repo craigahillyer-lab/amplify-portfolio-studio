@@ -161,7 +161,7 @@ function Slideshow({
               {g.type === "video" ? (
                 <video src={g.url} muted className="h-full w-full bg-black object-cover" />
               ) : (
-                <img src={g.url} alt={g.caption} loading="lazy" className="h-full w-full bg-white object-contain" />
+                <img src={g.url} alt={g.caption} loading="lazy" className={`h-full w-full bg-white ${g.fit === "cover" ? "object-cover" : "object-contain"}`} />
               )}
             </button>
           ))}
