@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
-import p4 from "@/assets/project-4.jpg";
 import wireframe from "@/assets/wireframe-submersible.png.asset.json";
 import headshot from "@/assets/headshot.png.asset.json";
 import sub1 from "@/assets/sub-1.png.asset.json";
@@ -24,6 +23,11 @@ import gooseLift from "@/assets/goose-lift.png.asset.json";
 import gooseArm from "@/assets/goose-arm.png.asset.json";
 import gooseIntake from "@/assets/goose-intake.png.asset.json";
 import gooseCam from "@/assets/goose-cam.gif.asset.json";
+import bechtelPart from "@/assets/bechtel-part.png.asset.json";
+import bechtelVise from "@/assets/bechtel-vise.jpg.asset.json";
+import bechtelLathe from "@/assets/bechtel-lathe.jpg.asset.json";
+import bechtelCam from "@/assets/bechtel-cam.png.asset.json";
+import bechtelVideo from "@/assets/bechtel-cam-video.mp4.asset.json";
 
 
 
@@ -52,6 +56,13 @@ const gooseGallery = [
   { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
   { url: gooseIntake.url, caption: "Intake mechanism with motor-driven linkage" },
   { url: gooseCam.url, caption: "CAM toolpaths for machined side plates" },
+];
+
+const bechtelGallery = [
+  { url: bechtelPart.url, caption: "Finished 3-axis milled aluminum part — surfaced pockets and chamfers" },
+  { url: bechtelVise.url, caption: "Workholding setup on the Haas VMC — vise and Pitbull clamp fixturing" },
+  { url: bechtelLathe.url, caption: "Haas ST-15 CNC lathe running a turning program" },
+  { url: bechtelCam.url, caption: "Fusion 360 CAM setup — lathe turning toolpath simulation" },
 ];
 
 
@@ -208,7 +219,9 @@ const projects = [
     title: "Bechtel Center Training",
     tag: "Purdue · Manufacturing Training",
     desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
-    img: p4,
+    img: bechtelPart.url,
+    gallery: bechtelGallery,
+    videoUrl: bechtelVideo.url,
   },
   {
     n: "05",
