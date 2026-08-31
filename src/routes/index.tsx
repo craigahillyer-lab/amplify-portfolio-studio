@@ -63,6 +63,7 @@ const bechtelGallery = [
   { url: bechtelVise.url, caption: "Workholding setup on the Haas VMC — vise and Pitbull clamp fixturing" },
   { url: bechtelLathe.url, caption: "Haas ST-15 CNC lathe running a turning program" },
   { url: bechtelCam.url, caption: "Fusion 360 CAM setup — lathe turning toolpath simulation" },
+  { url: bechtelVideo.url, caption: "Bechtel training build video", type: "video" as const },
 ];
 
 
