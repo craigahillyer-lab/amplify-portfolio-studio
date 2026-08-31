@@ -115,6 +115,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  usePageviewTracking();
 
   return (
     <QueryClientProvider client={queryClient}>
