@@ -175,7 +175,7 @@ function CardGallery({
   images,
   title,
 }: {
-  images: { url: string; caption: string; type?: "image" | "video" }[];
+  images: { url: string; caption: string; type?: "image" | "video"; fit?: "cover" | "contain" }[];
   title: string;
 }) {
   const [i, setI] = useState(0);
@@ -213,7 +213,7 @@ function CardGallery({
           src={current.url}
           alt={`${title} — ${current.caption}`}
           loading="lazy"
-          className="h-full w-full bg-white object-contain transition-transform duration-700"
+          className={`h-full w-full bg-white transition-transform duration-700 ${current.fit === "cover" ? "object-cover" : "object-contain"}`}
         />
       )}
       {images.length > 1 && (
