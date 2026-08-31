@@ -32,13 +32,30 @@ function getReferrer(): string {
   }
 }
 
+const OWNER_KEY = "ch_owner";
+
 /** Records a pageview whenever the route path changes (browser only). */
 export function usePageviewTracking() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (pathname.startsWith(PRIVATE_STATS_PATH)) return;
+
+    // Visiting the private dashboard marks this browser as the owner: never tracked again.
+    if (pathname.toLowerCase().startsWith(PRIVATE_STATS_PATH)) {
+      try {
+        localStorage.setItem(OWNER_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+      return;
+    }
+
+    try {
+      if (localStorage.getItem(OWNER_KEY) === "1") return;
+    } catch {
+      /* ignore */
+    }
 
     void restFetch("page_views", {
       method: "POST",
@@ -51,3 +68,4 @@ export function usePageviewTracking() {
     }).catch(() => {});
   }, [pathname]);
 }
+
