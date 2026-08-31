@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { usePageviewTracking } from "@/lib/track";
 
 function NotFoundComponent() {
   return (
