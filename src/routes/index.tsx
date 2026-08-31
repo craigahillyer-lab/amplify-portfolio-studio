@@ -220,7 +220,9 @@ const projects = [
     title: "Bechtel Center Training",
     tag: "Purdue · Manufacturing Training",
     desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
-    img: p4,
+    img: bechtelPart.url,
+    gallery: bechtelGallery,
+    videoUrl: bechtelVideo.url,
   },
   {
     n: "05",
