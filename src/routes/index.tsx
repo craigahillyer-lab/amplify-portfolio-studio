@@ -250,7 +250,20 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const projects = [
+type Project = {
+  n: string;
+  title: string;
+  tag: string;
+  desc: string;
+  compact?: boolean;
+  img?: string;
+  gallery?: { url: string; caption: string; type?: "image" | "video" }[];
+  videoUrl?: string;
+  links?: { label: string; url: string }[];
+};
+
+const projects: Project[] = [
+
   {
     n: "01",
     title: "Multimodal Underwater Robot",
