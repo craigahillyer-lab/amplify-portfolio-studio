@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 
+console.log("track module loaded");
 const VISITOR_KEY = "ch_visitor_id";
 export const PRIVATE_STATS_PATH = "/cvh-9f42x-metrics";
 
