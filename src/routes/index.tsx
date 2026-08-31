@@ -24,6 +24,11 @@ import gooseLift from "@/assets/goose-lift.png.asset.json";
 import gooseArm from "@/assets/goose-arm.png.asset.json";
 import gooseIntake from "@/assets/goose-intake.png.asset.json";
 import gooseCam from "@/assets/goose-cam.gif.asset.json";
+import bechtelPart from "@/assets/bechtel-part.png.asset.json";
+import bechtelVise from "@/assets/bechtel-vise.jpg.asset.json";
+import bechtelLathe from "@/assets/bechtel-lathe.jpg.asset.json";
+import bechtelCam from "@/assets/bechtel-cam.png.asset.json";
+import bechtelVideo from "@/assets/bechtel-cam-video.mp4.asset.json";
 
 
 
