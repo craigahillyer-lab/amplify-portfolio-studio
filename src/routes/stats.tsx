@@ -105,10 +105,8 @@ function StatsPage() {
               );
             })}
           </div>
-          <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-            <span>{formatDate(data.period.start)}</span>
-            <span>{activeDays.length} active days</span>
-            <span>{formatDate(data.period.end)}</span>
+          <div className="mt-6 text-center text-xs text-muted-foreground">
+            {activeDays.length} active days in {formatDate(data.period.start)} — {formatDate(data.period.end)}
           </div>
         </section>
 
