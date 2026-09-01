@@ -268,7 +268,7 @@ const projects: Project[] = [
     n: "01",
     title: "Multimodal Underwater Robot",
     tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
-    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
+    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Designed and fabricated internal mechanical components enabling buoyancy-driven vertical motion, wing-deployed gliding and thruster-driven propulsion. Selected to present the paper as second author at ASME IDETC/CIE 2026.",
     img: sub2.url,
     links: [
       { label: "Lab site", url: "https://www.purduemars.com/" },
@@ -278,35 +278,44 @@ const projects: Project[] = [
   },
   {
     n: "02",
+    title: "6 DOF Underwater Robotic Arm",
+    tag: "Project Lead · MARS Research Lab · Purdue",
+    desc: "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth — defining project scope and technical direction from the ground up. Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to measure arm performance, and scoped imitation-learning control for autonomous deep-sea manipulation. Leading weekly meetings across mechanical, electrical and software subteams.",
+    links: [
+      { label: "Lab site", url: "https://www.purduemars.com/" },
+    ],
+  },
+  {
+    n: "03",
     title: "SharpCut Auto Tool Changer",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Developed an automated tool-changing system for the SharpCut flatbed cutter, reducing manual changeover time and increasing machine throughput.",
     compact: true,
   },
   {
-    n: "03",
+    n: "04",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
     compact: true,
   },
   {
-    n: "04",
+    n: "05",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed and prototyped next-generation cutting machine tool head components, validated via 3D printing and low-cost machining.",
+    desc: "Designed a compact, multi-station tool-head assembly with an integrated router for Colex's next-generation flagship CNC machine — achieving a 3x faster Z-axis jump for high-speed cutting across a ~10,000-unit production run, validated through 3D-printed and machined prototypes.",
     compact: true,
   },
   {
-    n: "05",
+    n: "06",
     title: "Bechtel Center Training",
-    tag: "Purdue · Manufacturing Training",
-    desc: "Completed hands-on manufacturing training at Purdue's Bechtel Innovation Design Center — manual mill and lathe, CNC machining, welding and additive manufacturing certifications used to fabricate project parts.",
+    tag: "Purdue · Manufacturing Training · Dec 2025 – May 2026",
+    desc: "Completed the full badge program at Purdue's Bechtel Innovation Design Center machine shop, certifying proficiency across a wide range of manufacturing equipment.",
     img: bechtelPart.url,
     gallery: bechtelGallery,
   },
   {
-    n: "06",
+    n: "07",
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
@@ -315,7 +324,7 @@ const projects: Project[] = [
   },
 
   {
-    n: "07",
+    n: "08",
     title: "Cosmic Goose — FTC Competition Robot",
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
@@ -324,7 +333,7 @@ const projects: Project[] = [
     links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
-    n: "08",
+    n: "09",
     title: "CAD Macro Pad",
     tag: "Personal Project · PCB + Firmware",
     desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
@@ -335,27 +344,38 @@ const projects: Project[] = [
 
 const experience = [
   {
-    role: "Undergraduate Researcher",
+    role: "Undergraduate Researcher — Underwater Robot Project",
     org: "MARS Research Lab — Purdue University",
     date: "Oct 2025 – Present",
     bullets: [
-      "Redesigned submersible internal frame and modules for strength and modularity",
-      "Machined custom frame components for integrated water flow and wire management",
-      "Developed testing protocols and comprehensive documentation for a research paper",
-      "Exploring imitation learning to enhance autonomous control",
+      "Designed and fabricated the internal mechanical components of a 3.5 ft multimodal underwater robot — buoyancy-driven vertical motion, wing-deployed gliding and thruster-driven propulsion",
+      "Redesigned a structurally weak legacy internal frame in Fusion 360 into a rail-based modular architecture for rapid module swaps, simplified maintenance and leak inspection",
+      "Conducted pool testing and validation across all three locomotion modes, generating the technical documentation and visuals for the final paper",
+      "Selected to present the paper as second author at the ASME IDETC/CIE 2026 conference",
+    ],
+  },
+  {
+    role: "Project Lead — 6 DOF Underwater Robotic Arm",
+    org: "MARS Research Lab — Purdue University",
+    date: "Mar 2026 – Present",
+    bullets: [
+      "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth, defining project scope and technical direction from the ground up",
+      "Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to capture millimeter-precision acceleration data and quantitatively measure arm performance",
+      "Scoped integration of imitation-learning-based control for autonomous manipulation in deep-sea applications",
+      "Lead weekly meetings and progress presentations to keep mechanical, electrical and software subteams aligned",
     ],
   },
   {
     role: "Research & Development Intern",
     org: "Colex Finishing Solutions — Oakland, NJ",
-    date: "Jun 2025 – Aug 2025",
+    date: "May 2025 – Aug 2026",
     bullets: [
-      "Designed and prototyped tool and tool-interface components for the next-gen SharpCut tool head",
-      "Conducted product development research to evaluate concepts and prove manufacturing feasibility",
-      "Collaborated with senior engineers to model complex parts and full machine assemblies",
-      "Used 3D printing and low-cost machining to test and validate prototypes",
-      "Designed a custom LED circuit board integrated into the new machine",
-      "Ran CNC machines to assist in production",
+      "Led cost-benefit analysis and negotiated bringing 5-axis CNC lathe machining in-house, projecting ~$195,000 in annual savings, and spearheaded the proposal to the leadership board",
+      "Designed a compact, multi-station tool-head assembly with an integrated router for Colex's next-generation flagship CNC machine — 3x faster Z-axis jump across a ~10,000-unit production run",
+      "Introduced new manufacturing strategies and CNC tool-pathing approaches, increasing production output by ~50%",
+      "Manufactured and toleranced parts, authored data sheets, and programmed Haas CNC machines for live production",
+      "Designed the company's first custom circuit board — a higher-power, tightly integrated LED solution for the recognition camera",
+      "Conducted market research and cost comparisons against predecessor components to shape the tool head's design",
     ],
   },
   {
@@ -367,12 +387,19 @@ const experience = [
     ],
   },
   {
+    role: "Machine Shop Training",
+    org: "Bechtel Innovation Design Center — Purdue University",
+    date: "Dec 2025 – May 2026",
+    bullets: [
+      "Completed the full badge program, certifying proficiency across a wide range of manufacturing equipment",
+    ],
+  },
+  {
     role: "Gate Guard",
     org: "Glen Rock Municipal Pool — Glen Rock, NJ",
-    date: "Summer 2022 – 2024",
+    date: "May 2022 – Sep 2024",
     bullets: [
-      "Assisted with equipment maintenance and repair, including pool filtration system support",
-      "Scanned memberships and provided customer service to keep daily operations running smoothly",
+      "Balanced daily books, maintained pool filtration systems, and provided customer service to 500+ members daily",
     ],
   },
   {
@@ -496,7 +523,7 @@ function Index() {
           {/* Specs strip */}
           <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-8 font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:grid-cols-2">
             {[
-              ["3.77", "Purdue GPA · Dean's List"],
+              ["3.77", "Purdue GPA · Dean's List ×2"],
               ["Spring 2029", "Expected graduation"],
             ].map(([k, v]) => (
               <div key={v}>
@@ -678,7 +705,7 @@ function Index() {
                       Expected Graduation: Spring 2029
                     </div>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono-display text-xs text-primary">
-                      Dean&apos;s List · 3.77 GPA
+                      Dean&apos;s List Fall 2025 &amp; Spring 2026 · 3.77 GPA
                     </div>
                   </div>
                   <div className="border-t border-border pt-6">
@@ -711,12 +738,12 @@ function Index() {
                   {
                     icon: Zap,
                     label: "Fabrication",
-                    body: "CNC machining, FDM & LFS 3D printing, laser & vinyl cutting, soldering",
+                    body: "CNC machining, FDM & LFS 3D printing, water jetting, laser & vinyl cutting, soldering",
                   },
                   {
                     icon: Cpu,
-                    label: "Electronics",
-                    body: "KiCad PCB design, microcontrollers, Python firmware",
+                    label: "Electronics & Code",
+                    body: "KiCad PCB design, microcontrollers, Python firmware, MATLAB",
                   },
                 ].map((s) => (
                   <div
