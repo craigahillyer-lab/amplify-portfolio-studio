@@ -268,7 +268,7 @@ const projects: Project[] = [
     n: "01",
     title: "Multimodal Underwater Robot",
     tag: "MARS Research Lab · Purdue · ASME IDETC/CIE 2026",
-    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Redesigned the internal frame and modules for improved strength and modularity.",
+    desc: "Design and Development of a Multimodal Underwater Robot: an all-In-one Drifter, Glider, and Thruster. Designed and fabricated internal mechanical components enabling buoyancy-driven vertical motion, wing-deployed gliding and thruster-driven propulsion. Selected to present the paper as second author at ASME IDETC/CIE 2026.",
     img: sub2.url,
     links: [
       { label: "Lab site", url: "https://www.purduemars.com/" },
@@ -278,6 +278,15 @@ const projects: Project[] = [
   },
   {
     n: "02",
+    title: "6 DOF Underwater Robotic Arm",
+    tag: "Project Lead · MARS Research Lab · Purdue",
+    desc: "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth — defining project scope and technical direction from the ground up. Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to measure arm performance, and scoped imitation-learning control for autonomous deep-sea manipulation. Leading weekly meetings across mechanical, electrical and software subteams.",
+    links: [
+      { label: "Lab site", url: "https://www.purduemars.com/" },
+    ],
+  },
+  {
+    n: "03",
     title: "SharpCut Auto Tool Changer",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Developed an automated tool-changing system for the SharpCut flatbed cutter, reducing manual changeover time and increasing machine throughput.",
