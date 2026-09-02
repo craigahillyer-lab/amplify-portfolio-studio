@@ -725,7 +725,7 @@ function Index() {
               <h2 className="mt-4 text-5xl font-normal md:text-6xl">About me</h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Hello, my name is Craig. I use CAD, CAM and a range of technologies to build
-                prototypes and products from concept to finished part.
+                prototypes and products from concept to finished solutions.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
