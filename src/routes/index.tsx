@@ -278,36 +278,27 @@ const projects: Project[] = [
   },
   {
     n: "02",
-    title: "6 DOF Underwater Robotic Arm",
-    tag: "Project Lead · MARS Research Lab · Purdue",
-    desc: "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth — defining project scope and technical direction from the ground up. Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to measure arm performance, and scoped imitation-learning control for autonomous deep-sea manipulation. Leading weekly meetings across mechanical, electrical and software subteams.",
-    links: [
-      { label: "Lab site", url: "https://www.purduemars.com/" },
-    ],
-  },
-  {
-    n: "03",
     title: "SharpCut Auto Tool Changer",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Developed an automated tool-changing system for the SharpCut flatbed cutter, reducing manual changeover time and increasing machine throughput.",
     compact: true,
   },
   {
-    n: "04",
+    n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
     compact: true,
   },
   {
-    n: "05",
+    n: "04",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
     desc: "Designed a compact, multi-station tool-head assembly with an integrated router for Colex's next-generation flagship CNC machine — achieving a 3x faster Z-axis jump for high-speed cutting across a ~10,000-unit production run, validated through 3D-printed and machined prototypes.",
     compact: true,
   },
   {
-    n: "06",
+    n: "05",
     title: "Bechtel Center Training",
     tag: "Purdue · Manufacturing Training · Dec 2025 – May 2026",
     desc: "Completed the full badge program at Purdue's Bechtel Innovation Design Center machine shop, certifying proficiency across a wide range of manufacturing equipment.",
@@ -315,7 +306,7 @@ const projects: Project[] = [
     gallery: bechtelGallery,
   },
   {
-    n: "07",
+    n: "06",
     title: "Active Controls Rocketry",
     tag: "Purdue Space Program",
     desc: "Designed and executed 3-axis and 5-axis CNC toolpaths for high-tolerance rocketry components used on the active controls airframe.",
@@ -324,7 +315,7 @@ const projects: Project[] = [
   },
 
   {
-    n: "08",
+    n: "07",
     title: "Cosmic Goose — FTC Competition Robot",
     tag: "Mechanical Lead · High School FTC",
     desc: "Led mechanical design and fabrication of Cosmic Goose, our FTC competition robot — drivetrain, intake and scoring mechanisms designed in CAD, then machined, 3D printed and iterated between matches.",
@@ -333,7 +324,7 @@ const projects: Project[] = [
     links: [{ label: "Team Instagram", url: "https://www.instagram.com/cosmicgoose8902/" }],
   },
   {
-    n: "09",
+    n: "08",
     title: "CAD Macro Pad",
     tag: "Personal Project · PCB + Firmware",
     desc: "Custom low-cost macro pad for engineers. Designed a programmable PCB in KiCad and wrote Python firmware that works across SolidWorks, NX, Fusion 360 and Onshape.",
@@ -352,17 +343,6 @@ const experience = [
       "Redesigned a structurally weak legacy internal frame in Fusion 360 into a rail-based modular architecture for rapid module swaps, simplified maintenance and leak inspection",
       "Conducted pool testing and validation across all three locomotion modes, generating the technical documentation and visuals for the final paper",
       "Selected to present the paper as second author at the ASME IDETC/CIE 2026 conference",
-    ],
-  },
-  {
-    role: "Project Lead — 6 DOF Underwater Robotic Arm",
-    org: "MARS Research Lab — Purdue University",
-    date: "Mar 2026 – Present",
-    bullets: [
-      "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth, defining project scope and technical direction from the ground up",
-      "Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to capture millimeter-precision acceleration data and quantitatively measure arm performance",
-      "Scoped integration of imitation-learning-based control for autonomous manipulation in deep-sea applications",
-      "Lead weekly meetings and progress presentations to keep mechanical, electrical and software subteams aligned",
     ],
   },
   {
@@ -399,7 +379,8 @@ const experience = [
     org: "Glen Rock Municipal Pool — Glen Rock, NJ",
     date: "May 2022 – Sep 2024",
     bullets: [
-      "Balanced daily books, maintained pool filtration systems, and provided customer service to 500+ members daily",
+      "Assisted with equipment maintenance and repair, including pool filtration system support",
+      "Scanned memberships and provided customer service to keep daily operations running smoothly",
     ],
   },
   {
