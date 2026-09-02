@@ -346,17 +346,6 @@ const experience = [
     ],
   },
   {
-    role: "Project Lead — 6 DOF Underwater Robotic Arm",
-    org: "MARS Research Lab — Purdue University",
-    date: "Mar 2026 – Present",
-    bullets: [
-      "Leading design and development of a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth, defining project scope and technical direction from the ground up",
-      "Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to capture millimeter-precision acceleration data and quantitatively measure arm performance",
-      "Scoped integration of imitation-learning-based control for autonomous manipulation in deep-sea applications",
-      "Lead weekly meetings and progress presentations to keep mechanical, electrical and software subteams aligned",
-    ],
-  },
-  {
     role: "Research & Development Intern",
     org: "Colex Finishing Solutions — Oakland, NJ",
     date: "May 2025 – Aug 2026",
@@ -390,7 +379,8 @@ const experience = [
     org: "Glen Rock Municipal Pool — Glen Rock, NJ",
     date: "May 2022 – Sep 2024",
     bullets: [
-      "Balanced daily books, maintained pool filtration systems, and provided customer service to 500+ members daily",
+      "Assisted with equipment maintenance and repair, including pool filtration system support",
+      "Scanned memberships and provided customer service to keep daily operations running smoothly",
     ],
   },
   {
