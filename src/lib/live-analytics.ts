@@ -50,6 +50,51 @@ function topCounts(
     .slice(0, 6);
 }
 
+const BOT_PROBE_PATHS = new Set(["/imprint", "/impressum", "/contact", "/about", "/"]);
+const RAPID_FIRE_MS = 5000;
+const RAPID_FIRE_THRESHOLD = 10;
+
+function filterBotRows(rows: PageViewRow[]): PageViewRow[] {
+  const byVisitor = new Map<string, PageViewRow[]>();
+  for (const row of rows) {
+    const list = byVisitor.get(row.visitor_id) ?? [];
+    list.push(row);
+    byVisitor.set(row.visitor_id, list);
+  }
+
+  const botVisitors = new Set<string>();
+  for (const [visitorId, hits] of byVisitor.entries()) {
+    // No localStorage support is a strong bot/incognito-automation signal.
+    if (visitorId === "anonymous") {
+      botVisitors.add(visitorId);
+      continue;
+    }
+
+    // Visitors hitting many pages within a few seconds are almost certainly bots.
+    if (hits.length >= RAPID_FIRE_THRESHOLD) {
+      const sorted = hits.slice().sort((a, b) => a.created_at.localeCompare(b.created_at));
+      let rapid = 0;
+      for (let i = 1; i < sorted.length; i++) {
+        const t1 = new Date(sorted[i - 1].created_at).getTime();
+        const t2 = new Date(sorted[i].created_at).getTime();
+        if (t2 - t1 <= RAPID_FIRE_MS) rapid++;
+      }
+      if (rapid >= RAPID_FIRE_THRESHOLD - 1) {
+        botVisitors.add(visitorId);
+        continue;
+      }
+    }
+
+    // Visitors that only sweep common probe pages are likely crawlers.
+    const uniquePaths = new Set(hits.map((h) => h.path));
+    if (uniquePaths.size >= 3 && [...uniquePaths].every((p) => BOT_PROBE_PATHS.has(p))) {
+      botVisitors.add(visitorId);
+    }
+  }
+
+  return rows.filter((r) => !botVisitors.has(r.visitor_id));
+}
+
 export async function fetchLiveStats(): Promise<LiveStats> {
   const now = new Date();
   const start = new Date(now.getTime() - DAYS * 24 * 60 * 60 * 1000);
@@ -61,7 +106,8 @@ export async function fetchLiveStats(): Promise<LiveStats> {
 
   const res = await restFetch(query);
   if (!res.ok) throw new Error(`Request failed (${res.status})`);
-  const rows = ((await res.json()) ?? []) as PageViewRow[];
+  const rawRows = ((await res.json()) ?? []) as PageViewRow[];
+  const rows = filterBotRows(rawRows);
 
   const dailyMap = new Map<string, { visitors: Set<string>; pageviews: number }>();
   for (let i = 0; i < DAYS; i++) {
