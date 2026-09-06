@@ -821,7 +821,7 @@ function Index() {
                 />
               </div>
               <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                <span>Purdue Students Help Develop Underwater Robot With Multiple Ways</span>
+                <span>Underwater Robot Project News Appearance on WLFI 18</span>
                 <span>MP4 · 1080p</span>
               </div>
             </div>
