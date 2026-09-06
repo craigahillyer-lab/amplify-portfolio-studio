@@ -803,9 +803,8 @@ function Index() {
                   allowFullScreen
                 />
               </div>
-              <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+              <div className="flex items-center p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                 <span>Multimodal underwater robot build</span>
-                <span>YouTube · HD</span>
               </div>
             </div>
 
@@ -820,9 +819,8 @@ function Index() {
                   preload="metadata"
                 />
               </div>
-              <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+              <div className="flex items-center p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                 <span>Underwater Robot Project News Appearance on WLFI 18</span>
-                <span>MP4 · 1080p</span>
               </div>
             </div>
           </div>
