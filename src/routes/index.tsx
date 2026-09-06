@@ -68,7 +68,7 @@ const bechtelGallery = [
 ];
 
 const activeGallery = [
-  { url: activeCover.url, caption: "CAD screenshot — component held in a machine vise with toolpath vectors" },
+  { url: activeCover.url, caption: "CAM for active controls coupler for flow control valve" },
   { url: activeVideo.url, caption: "Active Controls CAM footage", type: "video" as const },
 ];
 
