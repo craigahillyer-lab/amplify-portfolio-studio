@@ -791,7 +791,7 @@ function Index() {
             Project build videos and demos.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div className="overflow-hidden rounded-2xl border border-border bg-secondary/40 shadow-glow">
               <div className="relative aspect-video">
                 <iframe
@@ -805,7 +805,24 @@ function Index() {
               </div>
               <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
                 <span>Multimodal underwater robot build</span>
-                <span>HD · 1080p</span>
+                <span>YouTube · HD</span>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-border bg-secondary/40 shadow-glow">
+              <div className="relative aspect-video bg-black">
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={purdueRobotVideo.url}
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+              <div className="flex items-center justify-between p-4 font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                <span>Purdue Students Help Develop Underwater Robot With Multiple Ways</span>
+                <span>MP4 · 1080p</span>
               </div>
             </div>
           </div>
