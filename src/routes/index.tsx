@@ -288,7 +288,7 @@ const projects: Project[] = [
     n: "03",
     title: "SharpCut Vacuum Box",
     tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed a sheet-metal vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution and simplifying assembly for production.",
+    desc: "Designed a dense PVC vacuum plenum box for the SharpCut flatbed cutting table, improving hold-down airflow distribution with independent zone control.",
     compact: true,
   },
   {
