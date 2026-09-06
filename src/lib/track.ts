@@ -5,6 +5,39 @@ import { restFetch } from "@/lib/rest";
 const VISITOR_KEY = "ch_visitor_id";
 export const PRIVATE_STATS_PATH = "/cvh-9f42x-metrics";
 
+const BOT_PATTERNS = [
+  /bot/i,
+  /crawler/i,
+  /spider/i,
+  /scrape/i,
+  /headless/i,
+  /selenium/i,
+  /puppeteer/i,
+  /playwright/i,
+  /phantomjs/i,
+  /slimerjs/i,
+  /datadog/i,
+  /uptimerobot/i,
+  /pingdom/i,
+  /semrush/i,
+  /ahrefs/i,
+  /moz/i,
+  /googlebot/i,
+  /bingbot/i,
+  /duckduckbot/i,
+  /baiduspider/i,
+  /yandex/i,
+];
+
+function isBot(): boolean {
+  if (typeof window === "undefined") return false;
+  if ((navigator as unknown as { webdriver?: boolean }).webdriver) return true;
+  const ua = navigator.userAgent ?? "";
+  if (!ua || ua.length < 20) return true;
+  if (BOT_PATTERNS.some((re) => re.test(ua))) return true;
+  return false;
+}
+
 function getVisitorId(): string {
   try {
     const existing = localStorage.getItem(VISITOR_KEY);
@@ -56,6 +89,9 @@ export function usePageviewTracking() {
     } catch {
       /* ignore */
     }
+
+    // Skip known bots and headless clients.
+    if (isBot()) return;
 
     void restFetch("page_views", {
       method: "POST",
