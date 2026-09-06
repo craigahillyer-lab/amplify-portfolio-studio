@@ -63,7 +63,7 @@ const bechtelGallery = [
   { url: bechtelPart.url, caption: "Finished 3-axis milled aluminum part — surfaced pockets and chamfers" },
   { url: bechtelVise.url, caption: "CNC Lego brick, first part at Bechtel" },
   { url: bechtelLathe.url, caption: "Lathe training — Haas ST-15Y" },
-  { url: bechtelCam.url, caption: "Fusion 360 CAM setup — lathe turning toolpath simulation" },
+  { url: bechtelCam.url, caption: "Fusion 360 CAM setup for lathe training" },
   { url: bechtelVideo.url, caption: "Bechtel training build video", type: "video" as const },
 ];
 
