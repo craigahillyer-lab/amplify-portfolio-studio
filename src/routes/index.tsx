@@ -55,7 +55,7 @@ const gooseGallery = [
   { url: gooseSide.url, caption: "Side profile — team 8902 chassis layout" },
   { url: gooseLift.url, caption: "Vertical lift assembly with linear slides and control hub mount" },
   { url: gooseArm.url, caption: "Scoring arm and intake subassembly" },
-  { url: gooseIntake.url, caption: "Intake mechanism with motor-driven linkage" },
+  { url: gooseIntake.url, caption: "Hanger sub assembly" },
   { url: gooseCam.url, caption: "CAM toolpaths for machined side plates" },
 ];
 
