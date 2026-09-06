@@ -295,7 +295,7 @@ const projects: Project[] = [
     n: "04",
     title: "SharpCut Tool Head",
     tag: "R&D Intern · Colex Finishing Solutions",
-    desc: "Designed a compact, multi-station tool-head assembly with an integrated router for Colex's next-generation flagship CNC machine — achieving a 3x faster Z-axis jump for high-speed cutting across a ~10,000-unit production run, validated through 3D-printed and machined prototypes.",
+    desc: "Designed a compact, multi-station tool-head assembly with an integrated router for Colex's next-generation flagship CNC machine — achieving a 3x faster Z-axis jump for high-speed cutting across a ~10,000-unit production run. Improved tool holding rigidity and concentricity for cleaner cuts and longer tool life, validated through 3D-printed and machined prototypes.",
     compact: true,
   },
   {
