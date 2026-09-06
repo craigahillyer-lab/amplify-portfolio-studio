@@ -428,7 +428,7 @@ function Index() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
           <a href="#top" className="flex items-center gap-2 font-mono-display text-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-primary shadow-glow" />
-            <span className="tracking-wider font-bold">CRAIG HILLYER</span>
+            <span className="tracking-wider">CRAIG HILLYER</span>
           </a>
           <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
             <a href="#work" className="transition-colors hover:text-foreground">Projects</a>
