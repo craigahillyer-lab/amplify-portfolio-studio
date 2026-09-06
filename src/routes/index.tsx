@@ -28,6 +28,7 @@ import bechtelVise from "@/assets/bechtel-vise.jpg.asset.json";
 import bechtelLathe from "@/assets/bechtel-lathe.jpg.asset.json";
 import bechtelCam from "@/assets/bechtel-cam.png.asset.json";
 import bechtelVideo from "@/assets/bechtel-cam-video.mp4.asset.json";
+import purdueRobotVideo from "@/assets/purdue-underwater-robot.mp4.asset.json";
 
 
 
