@@ -27,8 +27,8 @@ function MetricsPage() {
     refetchOnWindowFocus: true,
   });
 
-  const activeDays = (data?.daily ?? []).filter((d) => d.pageviews > 0);
-  const maxViews = Math.max(...activeDays.map((d) => d.pageviews), 1);
+  const daily = data?.daily ?? [];
+  const maxViews = Math.max(...daily.map((d) => d.pageviews), 1);
 
   return (
     <main className="min-h-screen bg-background px-6 py-12 text-foreground md:px-12">
