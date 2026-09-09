@@ -27,8 +27,8 @@ function MetricsPage() {
     refetchOnWindowFocus: true,
   });
 
-  const activeDays = (data?.daily ?? []).filter((d) => d.pageviews > 0);
-  const maxViews = Math.max(...activeDays.map((d) => d.pageviews), 1);
+  const daily = data?.daily ?? [];
+  const maxViews = Math.max(...daily.map((d) => d.pageviews), 1);
 
   return (
     <main className="min-h-screen bg-background px-6 py-12 text-foreground md:px-12">
@@ -85,19 +85,19 @@ function MetricsPage() {
 
           {isLoading ? (
             <div className="h-56 animate-pulse rounded-lg bg-secondary/60" />
-          ) : activeDays.length === 0 ? (
+          ) : daily.length === 0 ? (
             <p className="py-12 text-center text-sm text-muted-foreground">
               No visits recorded yet. Data starts collecting from now on.
             </p>
           ) : (
-            <div className="flex h-56 items-stretch justify-center gap-2 overflow-x-auto md:gap-4">
-              {activeDays.map((day) => {
-                const height = `${Math.max(6, (day.pageviews / maxViews) * 100)}%`;
+            <div className="flex h-56 items-stretch justify-start gap-2 overflow-x-auto md:gap-4">
+              {daily.map((day) => {
+                const height = day.pageviews > 0 ? `${Math.max(6, (day.pageviews / maxViews) * 100)}%` : "4px";
                 return (
                   <div key={day.date} className="group flex h-full w-14 shrink-0 flex-col items-center md:w-20">
                     <div className="flex w-full flex-1 items-end">
                       <div
-                        className="w-full rounded-t-md bg-primary/80 transition-all group-hover:bg-primary"
+                        className={`w-full rounded-t-md transition-all group-hover:bg-primary ${day.pageviews > 0 ? "bg-primary/80" : "bg-primary/20"}`}
                         style={{ height }}
                         title={`${day.visitors} visitors · ${day.pageviews} pageviews`}
                       />
@@ -114,9 +114,9 @@ function MetricsPage() {
             </div>
           )}
 
-          {data && activeDays.length > 0 && (
+          {data && daily.length > 0 && (
             <div className="mt-6 text-center text-xs text-muted-foreground">
-              Bars show pageviews · {activeDays.length} active days since {formatDayUTC(data.rangeStart)}
+              Bars show pageviews · {daily.length} days since {formatDayUTC(data.rangeStart)}
             </div>
           )}
         </section>
