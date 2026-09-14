@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, Users, Eye, MousePointerClick, Calendar, RefreshCw, Sun, FileText } from "lucide-react";
-import { fetchLiveStats, formatDayUTC, formatTimeUTC } from "@/lib/live-analytics";
+import { formatDayUTC, formatTimeUTC } from "@/lib/live-analytics";
+import { fetchLiveStatsFn } from "@/lib/live-analytics.functions";
 
 export const Route = createFileRoute("/cvh-9f42x-metrics")({
   head: () => ({
