@@ -336,17 +336,30 @@ const projects: Project[] = [
 
 const experience = [
   {
-    role: "Undergraduate Researcher — MARS Research Lab",
-    org: "Purdue University",
+    role: "Undergraduate Researcher",
+    org: "MARS Research Lab — Purdue University",
     date: "Oct 2025 – Present",
-    bullets: [
-      "Underwater Robot Project (Patent Pending): Designed and fabricated the internal mechanical components of a 3.5 ft multimodal underwater robot, enabling buoyancy-driven vertical motion, wing-deployed gliding and thruster-driven straight-line propulsion",
-      "Redesigned a structurally weak legacy internal frame in Fusion 360 into a rail-based modular architecture, allowing components to slide on and off for rapid module swaps, simplified maintenance and leak inspection",
-      "Conducted pool testing and validation across all three locomotion modes, generating the technical documentation and visuals for the final paper; selected to present the paper as second author at ASME IDETC/CIE 2026",
-      "6 DOF Underwater Robotic Arm Project: Lead design and development for a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth, defining project scope and technical direction from the ground up",
-      "Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to capture millimeter-precision acceleration and deceleration data to quantitatively measure arm performance",
-      "Scoped integration of imitation-learning-based control to enable autonomous manipulation in deep-sea applications",
-      "Lead weekly meetings and give progress presentations to keep mechanical, electrical and software subteams aligned",
+    subEntries: [
+      {
+        role: "Underwater Robot Project (Patent Pending)",
+        date: "Oct 2025 – Present",
+        bullets: [
+          "Designed and fabricated the internal mechanical components of a 3.5 ft multimodal underwater robot, enabling buoyancy-driven vertical motion, wing-deployed gliding and thruster-driven straight-line propulsion",
+          "Redesigned a structurally weak legacy internal frame in Fusion 360 into a rail-based modular architecture, allowing components to slide on and off for rapid module swaps, simplified maintenance and leak inspection",
+          "Conducted pool testing and validation across all three locomotion modes, generating the technical documentation and visuals for the final paper",
+          "Selected to present the paper as second author at the ASME IDETC/CIE 2026 conference in August 2026",
+        ],
+      },
+      {
+        role: "6 DOF Underwater Robotic Arm Project",
+        date: "Mar 2026 – Present",
+        bullets: [
+          "Lead design and development for a low-cost, predominantly 3D-printed 6-DOF underwater robotic arm rated to 300 m depth, defining project scope and technical direction from the ground up",
+          "Outlined an OptiTrack motion-capture setup with a MATLAB conversion layer to capture millimeter-precision acceleration and deceleration data to quantitatively measure arm performance",
+          "Scoped integration of imitation-learning-based control to enable autonomous manipulation in deep-sea applications",
+          "Lead weekly meetings and give progress presentations to keep mechanical, electrical and software subteams aligned",
+        ],
+      },
     ],
   },
   {
