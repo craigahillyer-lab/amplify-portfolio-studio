@@ -792,19 +792,10 @@ function Index() {
                 <div>
                   <div className="text-xl font-semibold">{e.role}</div>
                   <div className="text-sm text-primary">{e.org}</div>
-                  {e.bullets && (
-                    <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                      {e.bullets.map((b) => (
-                        <div key={b}>
-                          <span className="text-primary">•</span> {b}
-                        </div>
-                      ))}
-                    </div>
-                  )}
                   {e.subEntries && (
                     <div className="mt-6 space-y-6">
                       {e.subEntries.map((s) => (
-                        <div key={s.role} className="rounded-xl border border-border/60 bg-background/40 py-4 px-0">
+                        <div key={s.role} className="rounded-xl border border-border/60 bg-background/40 p-4">
                           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                             <div className="font-semibold">{s.role}</div>
                             <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
@@ -823,6 +814,15 @@ function Index() {
                     </div>
                   )}
                 </div>
+                {e.bullets && (
+                  <div className="space-y-2 text-sm text-muted-foreground md:col-span-2">
+                    {e.bullets.map((b) => (
+                      <div key={b}>
+                        <span className="text-primary">•</span> {b}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
