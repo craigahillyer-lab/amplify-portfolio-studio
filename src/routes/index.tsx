@@ -347,6 +347,16 @@ const experience = [
     ],
   },
   {
+    role: "Hardware Lead — NASA SUITS Challenge",
+    org: "Purdue SEARCH — Purdue University",
+    date: "Aug 2026 – Present",
+    bullets: [
+      "Leading a 10-person hardware team building chest-mounted and wall-panel control units feeding a live data-stream pipeline for in-house testing of astronaut assistance software at Purdue",
+      "Developing a wrist-mounted display housing and a backpack power/compute enclosure for onboard AI and displays",
+      "Developing a low-light visibility lighting rig for astronauts for nighttime task simulations",
+    ],
+  },
+  {
     role: "Research & Development Intern",
     org: "Colex Finishing Solutions — Oakland, NJ",
     date: "May 2025 – Aug 2026",
