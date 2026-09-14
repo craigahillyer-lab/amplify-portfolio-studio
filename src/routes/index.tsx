@@ -787,12 +787,12 @@ function Index() {
                 className="rounded-2xl border border-border bg-secondary/30 p-6 transition-colors hover:border-primary/40"
               >
                 <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
-                  <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                    {e.date}
-                  </div>
-                  <div className="md:text-right">
+                  <div>
                     <div className="text-xl font-semibold">{e.role}</div>
                     <div className="text-sm text-primary">{e.org}</div>
+                  </div>
+                  <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:text-right">
+                    {e.date}
                   </div>
                 </div>
                 {e.subEntries && (
