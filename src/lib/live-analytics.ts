@@ -16,6 +16,7 @@ export interface LiveStats {
   pageviews: number;
   pageviewsPerVisit: number;
   visitorsToday: number;
+  resumeDownloads: number;
   daily: { date: string; visitors: number; pageviews: number }[];
   pages: { label: string; value: number }[];
   sources: { label: string; value: number }[];
