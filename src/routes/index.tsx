@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { trackEvent } from "@/lib/track";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
