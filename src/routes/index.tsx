@@ -811,11 +811,13 @@ function Index() {
                               {s.date}
                             </div>
                           </div>
-                          <ul className="mt-3 list-inside list-disc space-y-2 pl-0 text-sm text-muted-foreground marker:text-primary">
+                          <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                             {s.bullets.map((b) => (
-                              <li key={b}>{b}</li>
+                              <div key={b}>
+                                <span className="text-primary">•</span> {b}
+                              </div>
                             ))}
-                          </ul>
+                          </div>
                         </div>
                       ))}
                     </div>
