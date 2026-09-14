@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, Users, Eye, MousePointerClick, Calendar, RefreshCw, Sun } from "lucide-react";
+import { ArrowLeft, Users, Eye, MousePointerClick, Calendar, RefreshCw, Sun, FileText } from "lucide-react";
 import { fetchLiveStats, formatDayUTC, formatTimeUTC } from "@/lib/live-analytics";
 
 export const Route = createFileRoute("/cvh-9f42x-metrics")({
@@ -70,11 +70,12 @@ function MetricsPage() {
           </div>
         )}
 
-        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <StatCard icon={<Users className="h-5 w-5 text-primary" />} label="Unique visitors" value={data ? data.visitors.toLocaleString() : "—"} />
           <StatCard icon={<Eye className="h-5 w-5 text-primary" />} label="Pageviews" value={data ? data.pageviews.toLocaleString() : "—"} />
           <StatCard icon={<MousePointerClick className="h-5 w-5 text-primary" />} label="Pages / visit" value={data ? data.pageviewsPerVisit.toFixed(2) : "—"} />
           <StatCard icon={<Sun className="h-5 w-5 text-primary" />} label="Visitors today" value={data ? data.visitorsToday.toLocaleString() : "—"} />
+          <StatCard icon={<FileText className="h-5 w-5 text-primary" />} label="Resume downloads" value={data ? data.resumeDownloads.toLocaleString() : "—"} />
         </section>
 
         <section className="mt-8 rounded-2xl border border-border bg-secondary/40 p-6 backdrop-blur-sm">

@@ -16,6 +16,7 @@ export interface LiveStats {
   pageviews: number;
   pageviewsPerVisit: number;
   visitorsToday: number;
+  resumeDownloads: number;
   daily: { date: string; visitors: number; pageviews: number }[];
   pages: { label: string; value: number }[];
   sources: { label: string; value: number }[];
@@ -98,16 +99,30 @@ function filterBotRows(rows: PageViewRow[]): PageViewRow[] {
 export async function fetchLiveStats(): Promise<LiveStats> {
   const now = new Date();
   const start = new Date(now.getTime() - DAYS * 24 * 60 * 60 * 1000);
+  const startIso = encodeURIComponent(start.toISOString());
 
-  const query =
-    `page_views?select=path,referrer,device,visitor_id,created_at` +
-    `&created_at=gte.${encodeURIComponent(start.toISOString())}` +
-    `&order=created_at.asc&limit=50000`;
+  const [viewsRes, eventsRes] = await Promise.all([
+    restFetch(
+      `page_views?select=path,referrer,device,visitor_id,created_at` +
+        `&created_at=gte.${startIso}&order=created_at.asc&limit=50000`,
+    ),
+    restFetch(
+      `events?select=event_name,visitor_id,created_at` +
+        `&created_at=gte.${startIso}&order=created_at.asc&limit=50000`,
+    ),
+  ]);
 
-  const res = await restFetch(query);
-  if (!res.ok) throw new Error(`Request failed (${res.status})`);
-  const rawRows = ((await res.json()) ?? []) as PageViewRow[];
+  if (!viewsRes.ok) throw new Error(`Request failed (${viewsRes.status})`);
+  if (!eventsRes.ok) throw new Error(`Events request failed (${eventsRes.status})`);
+
+  const rawRows = ((await viewsRes.json()) ?? []) as PageViewRow[];
   const rows = filterBotRows(rawRows);
+
+  const eventRows = ((await eventsRes.json()) ?? []) as {
+    event_name: string;
+    visitor_id: string;
+    created_at: string;
+  }[];
 
   const dailyMap = new Map<string, { visitors: Set<string>; pageviews: number }>();
   for (let i = 0; i < DAYS; i++) {
@@ -133,6 +148,7 @@ export async function fetchLiveStats(): Promise<LiveStats> {
 
   const visitors = allVisitors.size;
   const pageviews = rows.length;
+  const resumeDownloads = eventRows.filter((e) => e.event_name === "download_resume").length;
 
   return {
     fetchedAt: now.toISOString(),
@@ -142,6 +158,7 @@ export async function fetchLiveStats(): Promise<LiveStats> {
     pageviews,
     pageviewsPerVisit: visitors ? pageviews / visitors : 0,
     visitorsToday: dailyMap.get(todayKey)?.visitors.size ?? 0,
+    resumeDownloads,
     daily,
     pages: topCounts(rows, (r) => r.path, false),
     sources: topCounts(rows, (r) => r.referrer ?? "Direct", true),

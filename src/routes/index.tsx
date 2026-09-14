@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { trackEvent } from "@/lib/track";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Cpu, Wrench, Zap, Mail, Linkedin, MapPin, X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import resumePdf from "@/assets/Craig_Hillyer_-_Resume.pdf.asset.json";
@@ -521,6 +522,7 @@ function Index() {
             <a
               href={resumePdf.url}
               download="Craig_Hillyer_Resume.pdf"
+              onClick={() => trackEvent("download_resume")}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
               <FileText className="h-4 w-4" />

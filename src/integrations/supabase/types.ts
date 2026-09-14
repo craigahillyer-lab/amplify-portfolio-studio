@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      events: {
+        Row: {
+          created_at: string
+          device: string | null
+          event_name: string
+          id: string
+          path: string
+          visitor_id: string
+        }
+        Insert: {
+          created_at?: string
+          device?: string | null
+          event_name: string
+          id?: string
+          path: string
+          visitor_id: string
+        }
+        Update: {
+          created_at?: string
+          device?: string | null
+          event_name?: string
+          id?: string
+          path?: string
+          visitor_id?: string
+        }
+        Relationships: []
+      }
       page_views: {
         Row: {
           created_at: string

@@ -106,3 +106,18 @@ export function usePageviewTracking() {
   }, [pathname]);
 }
 
+/** Records a custom event (e.g. button click) from the browser. */
+export function trackEvent(eventName: string) {
+  if (typeof window === "undefined") return;
+  if (isBot()) return;
+  void restFetch("events", {
+    method: "POST",
+    body: JSON.stringify({
+      event_name: eventName,
+      path: window.location.pathname,
+      device: getDevice(),
+      visitor_id: getVisitorId(),
+    }),
+  }).catch(() => {});
+}
+
