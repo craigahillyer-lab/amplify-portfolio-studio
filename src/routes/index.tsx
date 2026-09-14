@@ -793,12 +793,9 @@ function Index() {
                   <div className="text-xl font-semibold">{e.role}</div>
                   <div className="text-sm text-primary">{e.org}</div>
                   {e.bullets && (
-                    <ul className="mt-4 space-y-2 pl-0 text-sm text-muted-foreground">
+                    <ul className="mt-4 list-inside list-disc space-y-2 pl-0 text-sm text-muted-foreground marker:text-primary">
                       {e.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2">
-                          <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-primary" />
-                          <span className="flex-1">{b}</span>
-                        </li>
+                        <li key={b}>{b}</li>
                       ))}
                     </ul>
                   )}
