@@ -1,9 +1,13 @@
-import { restFetch } from "@/lib/rest";
-
 export interface PageViewRow {
   path: string;
   referrer: string | null;
   device: string | null;
+  visitor_id: string;
+  created_at: string;
+}
+
+export interface EventRow {
+  event_name: string;
   visitor_id: string;
   created_at: string;
 }
@@ -96,33 +100,11 @@ function filterBotRows(rows: PageViewRow[]): PageViewRow[] {
   return rows.filter((r) => !botVisitors.has(r.visitor_id));
 }
 
-export async function fetchLiveStats(): Promise<LiveStats> {
+export function buildLiveStats(rawRows: PageViewRow[], eventRows: EventRow[]): LiveStats {
   const now = new Date();
   const start = new Date(now.getTime() - DAYS * 24 * 60 * 60 * 1000);
-  const startIso = encodeURIComponent(start.toISOString());
 
-  const [viewsRes, eventsRes] = await Promise.all([
-    restFetch(
-      `page_views?select=path,referrer,device,visitor_id,created_at` +
-        `&created_at=gte.${startIso}&order=created_at.asc&limit=50000`,
-    ),
-    restFetch(
-      `events?select=event_name,visitor_id,created_at` +
-        `&created_at=gte.${startIso}&order=created_at.asc&limit=50000`,
-    ),
-  ]);
-
-  if (!viewsRes.ok) throw new Error(`Request failed (${viewsRes.status})`);
-  if (!eventsRes.ok) throw new Error(`Events request failed (${eventsRes.status})`);
-
-  const rawRows = ((await viewsRes.json()) ?? []) as PageViewRow[];
   const rows = filterBotRows(rawRows);
-
-  const eventRows = ((await eventsRes.json()) ?? []) as {
-    event_name: string;
-    visitor_id: string;
-    created_at: string;
-  }[];
 
   const dailyMap = new Map<string, { visitors: Set<string>; pageviews: number }>();
   for (let i = 0; i < DAYS; i++) {
