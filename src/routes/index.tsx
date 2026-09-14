@@ -791,7 +791,7 @@ function Index() {
                     <div className="text-xl font-semibold">{e.role}</div>
                     <div className="text-sm text-primary">{e.org}</div>
                   </div>
-                  <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground md:text-right">
+                  <div className="font-mono-display text-xs uppercase tracking-wider text-primary md:text-right">
                     {e.date}
                   </div>
                 </div>
