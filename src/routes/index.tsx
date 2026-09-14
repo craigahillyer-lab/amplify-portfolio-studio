@@ -784,38 +784,40 @@ function Index() {
             {experience.map((e) => (
               <div
                 key={e.role + e.org}
-                className="grid gap-4 rounded-2xl border border-border bg-secondary/30 p-6 transition-colors hover:border-primary/40 md:grid-cols-[200px_1fr]"
+                className="rounded-2xl border border-border bg-secondary/30 p-6 transition-colors hover:border-primary/40"
               >
-                <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                  {e.date}
+                <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
+                  <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                    {e.date}
+                  </div>
+                  <div className="md:text-right">
+                    <div className="text-xl font-semibold">{e.role}</div>
+                    <div className="text-sm text-primary">{e.org}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xl font-semibold">{e.role}</div>
-                  <div className="text-sm text-primary">{e.org}</div>
-                  {e.subEntries && (
-                    <div className="mt-6 space-y-6">
-                      {e.subEntries.map((s) => (
-                        <div key={s.role} className="rounded-xl border border-border/60 bg-background/40 p-4">
-                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                            <div className="font-semibold">{s.role}</div>
-                            <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
-                              {s.date}
-                            </div>
-                          </div>
-                          <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-                            {s.bullets.map((b) => (
-                              <div key={b}>
-                                <span className="text-primary">•</span> {b}
-                              </div>
-                            ))}
+                {e.subEntries && (
+                  <div className="mt-6 space-y-6">
+                    {e.subEntries.map((s) => (
+                      <div key={s.role} className="rounded-xl border border-border/60 bg-background/40 p-4">
+                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                          <div className="font-semibold">{s.role}</div>
+                          <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                            {s.date}
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                        <div className="mt-3 space-y-2 text-sm text-muted-foreground">
+                          {s.bullets.map((b) => (
+                            <div key={b}>
+                              <span className="text-primary">•</span> {b}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {e.bullets && (
-                  <div className="space-y-2 text-sm text-muted-foreground md:col-span-2">
+                  <div className="mt-6 space-y-2 text-sm text-muted-foreground">
                     {e.bullets.map((b) => (
                       <div key={b}>
                         <span className="text-primary">•</span> {b}
