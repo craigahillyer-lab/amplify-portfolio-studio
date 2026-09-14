@@ -793,11 +793,13 @@ function Index() {
                   <div className="text-xl font-semibold">{e.role}</div>
                   <div className="text-sm text-primary">{e.org}</div>
                   {e.bullets && (
-                    <ul className="mt-4 list-inside list-disc space-y-2 pl-0 text-sm text-muted-foreground marker:text-primary">
+                    <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                       {e.bullets.map((b) => (
-                        <li key={b}>{b}</li>
+                        <div key={b}>
+                          <span className="text-primary">•</span> {b}
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   )}
                   {e.subEntries && (
                     <div className="mt-6 space-y-6">
