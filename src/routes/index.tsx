@@ -790,14 +790,38 @@ function Index() {
                 <div>
                   <div className="text-xl font-semibold">{e.role}</div>
                   <div className="text-sm text-primary">{e.org}</div>
-                  <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                    {e.bullets.map((b) => (
-                      <li key={b} className="flex gap-3">
-                        <span className="mt-2 inline-block h-1 w-1 shrink-0 rounded-full bg-primary" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                  {e.bullets && (
+                    <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                      {e.bullets.map((b) => (
+                        <li key={b} className="flex gap-3">
+                          <span className="mt-2 inline-block h-1 w-1 shrink-0 rounded-full bg-primary" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {e.subEntries && (
+                    <div className="mt-6 space-y-6">
+                      {e.subEntries.map((s) => (
+                        <div key={s.role} className="rounded-xl border border-border/60 bg-background/40 p-4">
+                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="font-semibold">{s.role}</div>
+                            <div className="font-mono-display text-xs uppercase tracking-wider text-muted-foreground">
+                              {s.date}
+                            </div>
+                          </div>
+                          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                            {s.bullets.map((b) => (
+                              <li key={b} className="flex gap-3">
+                                <span className="mt-2 inline-block h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
