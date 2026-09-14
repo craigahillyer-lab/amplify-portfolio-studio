@@ -23,7 +23,7 @@ export const Route = createFileRoute("/cvh-9f42x-metrics")({
 function MetricsPage() {
   const { data, isLoading, isError, error, isFetching, dataUpdatedAt, refetch } = useQuery({
     queryKey: ["live-stats"],
-    queryFn: fetchLiveStats,
+    queryFn: () => fetchLiveStatsFn({ data: { token: "cvh-9f42x" } }),
     refetchInterval: 30_000,
     refetchOnWindowFocus: true,
   });
